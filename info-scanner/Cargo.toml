@@ -5,3 +5,6 @@ edition = "2021"
 description = "a little tool for scanning blog post folder and generate meta information"
 
 [dependencies]
+markdown = "1.0.0-alpha.9"
+serde = "1.0"
+serde_yaml = "0.9"
