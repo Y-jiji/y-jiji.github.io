@@ -1,16 +1,78 @@
 <!DOCTYPE html>
-<!-- 
-    a search page for previous articles, this can be potentially slow if there are many articles. 
-    one way to mitigate this is to divide meta table into timestamped slices or create various index data structures on this meta table
--->
 <head>
 </head>
 
 <body>
     <div id="navi"></div>
-    <div id=""></div>
+    <div id="search">
+        <div id="search-box">
+            <input id="search-inp" type="text" placeholder="Search.. (topic:something | title:good) & taste:not-bad">
+            <button id="search-but">-></button>
+        </div>
+        <div id="result-list">
+        </div>
+    </div>
+    <script src="config.js"></script>
     <script src="navigation.js"></script>
     <script>
-
+        // parse query string into items, with logical opertors | & and parentheses
+        // operators are by default right associative
+        async function processQuery(_query) {
+            // match the parentheses
+            let cnt = 0;
+            let query = new String(_query.trim());
+            for (let i = 0; i < query.length; i += 1) {
+                if (query[i] == '(') { cnt += 1; }
+                if (query[i] == ')') { cnt -= 1; }
+                if (cnt == 0 && (query[i] == '|' || query[i] == '&')) {
+                    let resultL = await processQuery(query.slice(0, i));
+                    let resultR = await processQuery(query.slice(i+1, query.length));
+                    if (!resultL || !resultR) { return false }
+                    if (query[i] == '|') {
+                        return resultL.concat(resultR).unique();
+                    } else if (query[i] == '&') {
+                        return resultL.filter(value => resultR.includes(value));
+                    }
+                }
+            }
+            // now this item should be atomic, split it into tag and value
+            query = query.replace("(", "").replace(")", "").trim();
+            let split = query.indexOf(":");
+            let [tag, value] = [query.slice(0, split), query.slice(split+1, query.length)];
+            // fetch index file and process query
+            let index = await fetch(info + "index-" + tag + ".json")
+                .then((value) => {
+                    if (value.ok) { return value.text().then((value) => value) } 
+                    else { return "{}" }
+                })
+                .then(JSON.parse);
+            console.log(index);
+            if (value in index) {
+                return index[value];
+            } else {
+                return [];
+            }
+        }
+        document.getElementById("search-but").addEventListener("click", async (_ev) => {
+            let query = document.getElementById("search-inp").value;
+            // each predicate should be presented in tag:value format
+            let items = await processQuery(query);
+            let resultBox = document.getElementById("result-list");
+            if (!items) {
+                resultBox.innerHTML = "invalid query, sorry for cannot point out where is wrong currently";
+            } else {
+                resultBox.innerHTML = "";
+            }
+            // list all indexed items and list their file name
+            for (let item of items) {
+                let itemHTML = document.createElement("div");
+                itemHTML.setAttribute("class", "result-item");
+                itemHTML.innerText = item;
+                resultBox.appendChild(itemHTML);
+            }
+            if (resultBox.innerHTML.length == 0) {
+                resultBox.innerHTML = "sorry, we cannot find a matching article";
+            }
+        })
     </script>
 </body>

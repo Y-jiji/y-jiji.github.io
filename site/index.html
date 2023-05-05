@@ -42,8 +42,7 @@
 			console.log(topicHeadHTML.outerHTML);
 			// create a blank topic item
 			let topicItemHTML = document.createElement("div");
-				topicItemHTML.setAttribute("class", "topic-item");
-				topicItemHTML.setAttribute("class", "artic-list");
+				topicItemHTML.setAttribute("class", "topic-item artic-list");
 				topicItemHTML.appendChild(topicHeadHTML);
 			// foreach article, make an html element in current topic
 			art.slice(0, 4).forEach((art) => {
