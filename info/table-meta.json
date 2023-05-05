@@ -1,12 +1,11 @@
 {
-	"sample.md": {
-		"topic": "sample",
-		"title": "sample",
-		"timestamp": "2023-05-05"
-	},
-	"another-sample.md": {
-		"topic": "sample",
-		"title": "sample",
-		"timestamp": "2023-05-05"
-	}
+    "another-sample.md": null,
+    "sample.md": {
+        "abstr": "in this blog post, we will mainly cover three important papers: ",
+        "tag": [
+            "a",
+            "b"
+        ],
+        "topic": "test"
+    }
 }
