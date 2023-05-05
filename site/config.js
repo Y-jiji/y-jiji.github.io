@@ -1,4 +1,4 @@
-const root = "http://y-jiji.github.io/blog/"
+const root = "https://y-jiji.github.io/blog/"
 
 /* the site to serve from */
 const site = root+"site/"
