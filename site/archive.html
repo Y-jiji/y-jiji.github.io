@@ -17,6 +17,12 @@
     <script>
         // parse query string into items, with logical opertors | & and parentheses
         // operators are by default right associative
+        // index-*.json should look like
+        /* ----------------------------------------------------------------- //
+            {
+                "<value of a tag>": ["<article path>", "<article path>"]
+            }
+        // ----------------------------------------------------------------- */
         async function processQuery(_query) {
             // match the parentheses
             let cnt = 0;
