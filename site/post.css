@@ -1,13 +1,15 @@
 /*
-#cont this document has been created with Marked.app <http://marked2app.com>
-#cont please leave this notice in place, along with any additional credits below.
+this document has been created with Marked.app <http://marked2app.com>
+please leave this notice in place, along with any additional credits below.
 ---------------------------------------------------------------
-#cont title: Simplex
-#cont author: Brett Terpstra <http://brettterpstra.com>
-#cont description: Lifted from http://bootswatch.com/ [https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE]
+title: Simplex
+author: Brett Terpstra <http://brettterpstra.com>
+description: Lifted from http://bootswatch.com/ [https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE]
 */
-#wrapper {
-    padding: 20px;
+
+#cont {
+    margin-left: max(10px, 10vw);
+    margin-right: max(10px, 10vw);
 }
 
 @font-face {
@@ -58,7 +60,7 @@
     height: 0;
 }
 
-[hidden],
+#cont [hidden],
 #cont template {
     display: none;
 }
@@ -343,14 +345,14 @@
     }
 }
 
-* {
+#cont * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-*:before,
-*:after {
+#cont *:before,
+#cont *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -405,17 +407,17 @@
     vertical-align: middle;
 }
 
-.img-responsive {
+#cont .img-responsive {
     display: block;
     height: auto;
     max-width: 100%;
 }
 
-.img-rounded {
+#cont .img-rounded {
     border-radius: 6px;
 }
 
-.img-thumbnail {
+#cont .img-thumbnail {
     display: inline-block;
     height: auto;
     max-width: 100%;
@@ -428,7 +430,7 @@
     transition: all 0.2s ease-in-out;
 }
 
-.img-circle {
+#cont .img-circle {
     border-radius: 50%;
 }
 
@@ -439,7 +441,7 @@
     border-top: 1px solid #eeeeee;
 }
 
-.sr-only {
+#cont .sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -456,12 +458,12 @@
 #cont h4,
 #cont h5,
 #cont h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
+#cont .h1,
+#cont .h2,
+#cont .h3,
+#cont .h4,
+#cont .h5,
+#cont .h6 {
     font-family: 'Josefin Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 500;
     line-height: 1.1;
@@ -474,24 +476,24 @@
 #cont h4 small,
 #cont h5 small,
 #cont h6 small,
-.h1 small,
-.h2 small,
-.h3 small,
-.h4 small,
-.h5 small,
-.h6 small,
+#cont .h1 small,
+#cont .h2 small,
+#cont .h3 small,
+#cont .h4 small,
+#cont .h5 small,
+#cont .h6 small,
 #cont h1 .small,
 #cont h2 .small,
 #cont h3 .small,
 #cont h4 .small,
 #cont h5 .small,
 #cont h6 .small,
-.h1 .small,
-.h2 .small,
-.h3 .small,
-.h4 .small,
-.h5 .small,
-.h6 .small {
+#cont .h1 .small,
+#cont .h2 .small,
+#cont .h3 .small,
+#cont .h4 .small,
+#cont .h5 .small,
+#cont .h6 .small {
     font-weight: normal;
     line-height: 1;
     color: #999999;
@@ -530,32 +532,32 @@
 }
 
 #cont h1,
-.h1 {
+#cont .h1 {
     font-size: 33px;
 }
 
 #cont h2,
-.h2 {
+#cont .h2 {
     font-size: 27px;
 }
 
 #cont h3,
-.h3 {
+#cont .h3 {
     font-size: 23px;
 }
 
 #cont h4,
-.h4 {
+#cont .h4 {
     font-size: 17px;
 }
 
 #cont h5,
-.h5 {
+#cont .h5 {
     font-size: 13px;
 }
 
 #cont h6,
-.h6 {
+#cont .h6 {
     font-size: 12px;
 }
 
@@ -563,7 +565,7 @@
     margin: 0 0 9px;
 }
 
-.lead {
+#cont .lead {
     margin-bottom: 18px;
     font-size: 14px;
     font-weight: 200;
@@ -577,7 +579,7 @@
 }
 
 #cont small,
-.small {
+#cont .small {
     font-size: 85%;
 }
 
@@ -609,7 +611,7 @@
     border-bottom: 1px dotted #999999;
 }
 
-.initialism {
+#cont .initialism {
     font-size: 90%;
     text-transform: uppercase;
 }

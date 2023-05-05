@@ -13,7 +13,7 @@
           tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
             displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true
+            processEscapes: true,
           },
           "HTML-CSS": { availableFonts: ["TeX"] }
         });
@@ -21,7 +21,7 @@
 </head>
 
 <body>
-	<div id="navi"></div> <!-- navigation container -->
+	<nav id="navi"></nav> <!-- navigation container -->
 	<div id="prev"></div> <!-- blog list container -->
 	<div id="cont"></div> <!-- blog content container -->
 	<div id="foot"></div> <!-- foot content container -->
@@ -35,19 +35,24 @@
 		function loadMathJAX() {
 			let body = document.getElementsByTagName("head")[0];
 			let script = document.createElement("script");
-			script.type = "text/javascript";
-			script.src  = site + "mathjax/MathJax.js";
+			script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", site + "mathjax/MathJax.js");
 			body.appendChild(script);
 		}
 		// parse markdown and do miscellanious after work
 		fetch(post + file, {"credentials": "include"})
 		.then(async (value) => await value.text())
+        .then(text => {
+            let new_text = text.replaceAll("\\\\", "\\\\\\\\");
+            console.log(new_text);
+            return new_text;
+        })
 		.then(text => {
-            let cached_lex = marked.Lexer.lex;
+            let oldLexerLex = marked.Lexer.lex;
             marked.Lexer.lex = function (text, options) {
                 let parsed = yamlFront.loadFront(text)
                 let cKey = '__content'
-                return cached_lex(parsed[cKey], options)
+                return oldLexerLex(parsed[cKey], options)
             }
 			document.getElementById("cont").innerHTML = marked.parse(text);
 			return true; })
@@ -58,12 +63,16 @@
             // redirect links
             for (let alink of document.querySelectorAll("#cont a")) {
                 let path = alink.href.split(site)[1];
-                alink.href = site + `post.html?file=${path}`;
+                if (path) {
+                    alink.href = site + `post.html?file=${path}`;
+                }
             }
             // redirect image path
             for (let image of document.querySelectorAll("#cont img")) {
                 let path = image.src.split(site)[1];
-                image.src = post + path;
+                if (path) {
+                    image.src = post + path;
+                }
             }
         })
 		// the table of meta information about all files
