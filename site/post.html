@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="post.css">
+</head>
+
+<body>
+	<div id="navi"></div> <!-- navigation container -->
+	<div id="prev"></div> <!-- blog list container -->
+	<div id="cont"></div> <!-- blog content container -->
+	<div id="foot"></div> <!-- foot content container -->
+
+	<script src="config.js"></script>	<!-- load global config   -->
+	<script src="navigation.js"></script>	<!-- load navigation bar  -->
+	<script src="marked.js"></script>	<!-- load markdown parser -->
+
+	<!-- script for loading blog posts from source -->
+	<script>
+		let parameter = new URLSearchParams(window.location.search);
+		// parse and render markdown content
+		let file = new String(parameter.get("file")).split(/^\//, 1)[0].split(/\.md$/, 1)[0] + ".md";
+		// declare a hook after parsing text
+		function loadMathJAX() {
+			let head = document.getElementsByTagName("head")[0];
+			let script = document.createElement("script");
+			script.type = "text/x-mathjax-config";
+			script[(window.opera ? "innerHTML" : "text")] =
+			  "MathJax.Hub.Config({\n" +
+			  "  tex2jax: { inlineMath: [['$','$'], ['\\\\(','\\\\)']] }\n" +
+			  "});";
+			head.appendChild(script);
+			script = document.createElement("script");
+			script.type = "text/javascript";
+			script.src  = site + "mathjax/tex-mml-chtml.js";
+			head.appendChild(script);
+		}
+		// parse markdown and do miscellanious after work
+		fetch(post + file, {"credentials": "include"})
+		.then(async (value) => await value.text())
+		.then(text => {
+			document.getElementById("cont").innerHTML = marked.parse(text);
+			return true; })
+		.then(_any => { loadMathJAX() })
+        .then(_any => {
+            // there should be a marked plugin called marked-base-url that can presumably do this job for me
+            // but unfortunately there are some configuration that a non-frontend engineer can barely understand
+            // redirect links
+            for (let alink of document.querySelectorAll("#cont a")) {
+                let path = alink.href.split(site)[1];
+                alink.href = site + `post.html?file=${path}`;
+            }
+            // redirect image path
+            for (let image of document.querySelectorAll("#cont img")) {
+                let path = image.src.split("site")[1];
+                image.src = post + path;
+            }
+        })
+		// the table of meta information about all files
+		/* ---------------------------------------------------------------- //
+			{
+				"<path>": {
+					"topic": "about",
+					"timestamp":  "2024-02-30",
+				}
+			}
+		// ---------------------------------------------------------------- */ 
+		fetch(info + "table-meta.json", {"credentials": "include"})
+		.then(async (value) => await value.text())
+		.then(JSON.parse)
+		.then((tableMeta) => {
+			let current = tableMeta[file]["topic"];
+			let cntAnother = 0;
+			let cntCurrent = 0;
+			let arrAnother = [];
+			let arrCurrent = [];
+			const lenAnother = 3;
+			const lenCurrent = 2; 
+			for (let [key, val] of Object.entries(tableMeta)) {
+				if (val["topic"] == current) {
+					let randNum = Math.floor(Math.random() * cntCurrent);
+					if (cntCurrent < lenCurrent) {
+						arrCurrent.push([key, val]);
+					} else if (randNum < lenCurrent) {
+						arrCurrent[randNum] = [key, val];
+					}
+					cntCurrent += 1;
+				} else {
+					let randNum = Math.floor(Math.random() * cntAnother);
+					if (cntAnother < lenAnother) {
+						arrAnother.push([key, val]);
+					} else if (randNum < lenAnother) {
+						arrAnother[randNum] = [key, val];
+					}
+					cntAnother += 1;
+				}
+			}
+			return arrAnother.concat(arrCurrent); 
+		})
+		.then((arrayMeta) => {
+            console.log(arrayMeta);
+			let prevList = document.getElementById("prev");
+			for (let [href, info] of arrayMeta) {
+				let prevItem = document.createElement("div");
+				prevItem.setAttribute("class", "prev-item");
+                let hrefRedirected = site + "post.html?file=" + href;
+				prevItem.innerHTML = `
+					<div class="prev-item-title">${info["title"]}</div>
+					<div class="prev-item-ahref">
+						<a href="${hrefRedirected}">READ -></a>
+					</div>
+				`;
+                prevList.appendChild(prevItem);
+			}
+		})
+	</script>
+</body>

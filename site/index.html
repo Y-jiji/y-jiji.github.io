@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" src="index.css"/>
+</head>
+<body>
+	<h1>Y-jiji's Blog</h1>
+	<!-- navigation buttons -->
+	<div id="navi"></div>
+	<!-- list 4 most recent blog posts from each topic -->
+	<div id="topic-list"></div>
+	<script src="config.js"></script>
+	<script src="navigation.js"></script>	<!-- load navigation bar  -->
+	<script>
+		/* fetch generated index of topics */
+		fetch(info + "topic-list.json")
+		/* -------------------------------------------------------------------- //
+			the topic list json should look like { 
+				"<topic>" : [ 
+		 			{
+						"title" : "<title>", 
+				 		"abstr" : "<abstract>", 
+				 		"ahref" : "<ahref>", 
+					}
+				],
+				"<topic>" : [
+		 			{
+						"title" : "<title>", 
+				 		"abstr" : "<abstract>", 
+				 		"ahref" : "<ahref>", 
+					}
+				]
+			}
+		// -------------------------------------------------------------------- */
+		.then(async (value) => await value.text())
+		.then((value) => Object.entries(JSON.parse(value)))
+		// foreach topic, match out the articles
+		.then((entry) => entry.forEach(([key, art]) => {
+			// create a topic description
+			let topicHeadHTML = document.createElement("h2");
+				topicHeadHTML.setAttribute("class", "topic-title");
+				topicHeadHTML.innerText = key;
+			console.log(topicHeadHTML.outerHTML);
+			// create a blank topic item
+			let topicItemHTML = document.createElement("div");
+				topicItemHTML.setAttribute("class", "topic-item");
+				topicItemHTML.setAttribute("class", "artic-list");
+				topicItemHTML.appendChild(topicHeadHTML);
+			// foreach article, make an html element in current topic
+			art.slice(0, 4).forEach((art) => {
+				console.log("title: " + art["title"]);
+				console.log("abstr: " + art["abstr"]);
+				console.log("ahref: " + art["ahref"]);
+				/* create title item */
+				let titleItemHTML = document.createElement("h3");
+					titleItemHTML.setAttribute("class", "artic-title");
+					titleItemHTML.innerText = art["title"];
+				console.log(titleItemHTML.outerHTML);
+				/* create abstr item */
+				let abstrItemHTML = document.createElement("p");
+					abstrItemHTML.setAttribute("class", "artic-abstr");
+					abstrItemHTML.innerText = art["abstr"];
+				console.log(abstrItemHTML.outerHTML);
+				/* create ahref item */
+				let ahrefItemHTML = document.createElement("a");
+					ahrefItemHTML.setAttribute("class", "artic-ahref");
+					ahrefItemHTML.setAttribute("href", site + "post.html?file=" + art["ahref"]);
+					ahrefItemHTML.innerText = "Read ->";
+				console.log(ahrefItemHTML.outerHTML);
+				/* compose article item with the previous items */
+				let articItemHTML = document.createElement("div");
+					articItemHTML.setAttribute("class", "artic-item");
+					articItemHTML.appendChild(titleItemHTML);
+					articItemHTML.appendChild(abstrItemHTML);
+					articItemHTML.appendChild(ahrefItemHTML);
+				console.log(articItemHTML.outerHTML);
+				topicItemHTML.appendChild(articItemHTML);
+			});
+			// append topic item to topic list
+			let topicListHTML = document.getElementById("topic-list");
+			topicListHTML.appendChild(topicItemHTML);
+		}))
+	</script>
+</body>
+

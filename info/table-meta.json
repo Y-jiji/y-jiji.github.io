@@ -1,0 +1,12 @@
+{
+	"sample.md": {
+		"topic": "sample",
+		"title": "sample",
+		"timestamp": "2023-05-05"
+	},
+	"another-sample.md": {
+		"topic": "sample",
+		"title": "sample",
+		"timestamp": "2023-05-05"
+	}
+}

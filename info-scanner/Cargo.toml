@@ -1,0 +1,7 @@
+[package]
+name = "info-scanner"
+version = "0.1.0"
+edition = "2021"
+description = "a little tool for scanning blog post folder and generate meta information"
+
+[dependencies]
