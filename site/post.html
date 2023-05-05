@@ -31,14 +31,6 @@
 		let parameter = new URLSearchParams(window.location.search);
 		// parse and render markdown content
 		let file = new String(parameter.get("file")).split(/^\//, 1)[0].split(/\.md$/, 1)[0] + ".md";
-		// declare a hook after parsing text
-		function loadMathJAX() {
-			let body = document.getElementsByTagName("head")[0];
-			let script = document.createElement("script");
-			script.setAttribute("type", "text/javascript");
-            script.setAttribute("src", site + "mathjax/MathJax.js");
-			body.appendChild(script);
-		}
 		// parse markdown and do miscellanious after work
 		fetch(post + file, {"credentials": "include"})
 		.then(async (value) => await value.text())
@@ -56,7 +48,13 @@
             }
 			document.getElementById("cont").innerHTML = marked.parse(text);
 			return true; })
-		.then(_any => { loadMathJAX() })
+		.then(_any => {
+            let head = document.getElementsByTagName("head")[0];
+			let script = document.createElement("script");
+			script.setAttribute("type", "text/javascript");
+            script.setAttribute("src", site + "mathjax/MathJax.js");
+			head.appendChild(script);
+        })
         .then(_any => {
             // there should be a marked plugin called marked-base-url that can presumably do this job for me
             // but unfortunately there are some configuration that a non-frontend engineer can barely understand

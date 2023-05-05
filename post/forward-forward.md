@@ -12,7 +12,7 @@ title: "Understanding Forward-Forward"
 
 ## Introduction + Outline
 
-Recently, the founding father of deep learning, Geoffrey Hinton presented a novel algorithm for deep neural network training [-> original material](https://www.cs.toronto.edu/~hinton/FFA13.pdf). Actually the idea of forward-gradient was somewhat borrowed from [Baydin's research](https://arxiv.org/abs/2202.08587), but Professor Hinton's team contributed a serial of twiks that make it scale out ([see their ICLR23 paper](https://arxiv.org/abs/2210.03310)). 
+Recently, the founding father of deep learning, Geoffrey Hinton presented a novel algorithm for deep neural network training ([presentation material](https://www.cs.toronto.edu/~hinton/FFA13.pdf)). Actually the idea of forward-gradient was somewhat borrowed from [Baydin's research](https://arxiv.org/abs/2202.08587), but Professor Hinton's team contributed a serial of twiks that make it scale out ([see their ICLR23 paper](https://arxiv.org/abs/2210.03310)). 
 
 In later sections, we will try to cover all of this ideas and provide some possible motivations of this work. First, a brief review on Baydin's research will be presented, followed up by an explanation about why naive FF method doesn't work in practice. Then, we will elborate on some possible remedies to mitigate naive FF's problem, leading our way to practical FF method. Finally, we will give a wild guess of what these ideas imply, and list some possibly interesting topic. 
 

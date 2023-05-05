@@ -121,8 +121,8 @@ description: Lifted from http://bootswatch.com/ [https://github.com/thomaspark/b
 #cont kbd,
 #cont pre,
 #cont samp {
-    font-family: monospace, serif;
-    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.5em;
 }
 
 #cont pre {
@@ -538,6 +538,8 @@ description: Lifted from http://bootswatch.com/ [https://github.com/thomaspark/b
 
 #cont h2,
 #cont .h2 {
+    border-top: #000 dashed 2px !important;
+    padding-top: 15px;
     font-size: 27px;
 }
 
@@ -563,6 +565,8 @@ description: Lifted from http://bootswatch.com/ [https://github.com/thomaspark/b
 
 #cont p {
     margin: 0 0 9px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 100;
 }
 
 #cont .lead {
@@ -696,9 +700,12 @@ description: Lifted from http://bootswatch.com/ [https://github.com/thomaspark/b
 
 #cont pre {
     display: block;
-    padding: 8.5px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
     margin: 0 0 9px;
-    font-size: 12px;
+    font-size: 0.90em;
     line-height: 1.428571429;
     color: #333333;
     word-break: break-all;
