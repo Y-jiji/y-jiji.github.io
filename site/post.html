@@ -12,6 +12,8 @@
 	<script src="config.js"></script>	<!-- load global config   -->
 	<script src="navigation.js"></script>	<!-- load navigation bar  -->
 	<script src="marked.js"></script>	<!-- load markdown parser -->
+    <script src="js-yaml.js"></script>
+    <script src="yamlFront.js"></script>
 
 	<!-- script for loading blog posts from source -->
 	<script>
@@ -37,6 +39,12 @@
 		fetch(post + file, {"credentials": "include"})
 		.then(async (value) => await value.text())
 		.then(text => {
+            let cached_lex = marked.Lexer.lex;
+            marked.Lexer.lex = function (text, options) {
+                let parsed = yamlFront.loadFront(text)
+                let cKey = '__content'
+                return cached_lex(parsed[cKey], options)
+            }
 			document.getElementById("cont").innerHTML = marked.parse(text);
 			return true; })
 		.then(_any => { loadMathJAX() })

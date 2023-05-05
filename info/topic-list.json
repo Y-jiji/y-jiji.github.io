@@ -1,14 +1,11 @@
 {
-	"artifical intelligence": [
-		{
-			"title": "Understanding Forward-Forward Algorithm",
-			"ahref": "",
-			"abstr": "In this article, I will try to cover mainly three papers. "
-		},
-		{
-			"title": "My Understanding Towards Contemporary Artificial Intelligence",
-			"ahref": "",
-			"abstr": "In this article ..."
-		}
-	]
+    "test": [
+        {
+            "abstr": "in this blog post, we will mainly cover three important papers: ",
+            "ahref": "sample.md",
+            "date": "2023-05-05",
+            "tag": [],
+            "title": null
+        }
+    ]
 }
