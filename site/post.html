@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <head>
 	<link rel="stylesheet" href="post.css">
+    <script src="config.js"></script>	<!-- load global config   -->
+	<script src="navigation.js"></script>	<!-- load navigation bar  -->
+	<script src="marked.js"></script>	<!-- load markdown parser -->
+    <script src="js-yaml.js"></script>
+    <script src="yamlFront.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          jax: ["input/TeX", "output/HTML-CSS"],
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+          },
+          "HTML-CSS": { availableFonts: ["TeX"] }
+        });
+    </script>
 </head>
 
 <body>
@@ -9,12 +26,6 @@
 	<div id="cont"></div> <!-- blog content container -->
 	<div id="foot"></div> <!-- foot content container -->
 
-	<script src="config.js"></script>	<!-- load global config   -->
-	<script src="navigation.js"></script>	<!-- load navigation bar  -->
-	<script src="marked.js"></script>	<!-- load markdown parser -->
-    <script src="js-yaml.js"></script>
-    <script src="yamlFront.js"></script>
-
 	<!-- script for loading blog posts from source -->
 	<script>
 		let parameter = new URLSearchParams(window.location.search);
@@ -22,18 +33,11 @@
 		let file = new String(parameter.get("file")).split(/^\//, 1)[0].split(/\.md$/, 1)[0] + ".md";
 		// declare a hook after parsing text
 		function loadMathJAX() {
-			let head = document.getElementsByTagName("head")[0];
+			let body = document.getElementsByTagName("head")[0];
 			let script = document.createElement("script");
-			script.type = "text/x-mathjax-config";
-			script[(window.opera ? "innerHTML" : "text")] =
-			  "MathJax.Hub.Config({\n" +
-			  "  tex2jax: { inlineMath: [['$','$'], ['\\\\(','\\\\)']] }\n" +
-			  "});";
-			head.appendChild(script);
-			script = document.createElement("script");
 			script.type = "text/javascript";
-			script.src  = site + "mathjax/tex-mml-chtml.js";
-			head.appendChild(script);
+			script.src  = site + "mathjax/MathJax.js";
+			body.appendChild(script);
 		}
 		// parse markdown and do miscellanious after work
 		fetch(post + file, {"credentials": "include"})
@@ -58,7 +62,7 @@
             }
             // redirect image path
             for (let image of document.querySelectorAll("#cont img")) {
-                let path = image.src.split("site")[1];
+                let path = image.src.split(site)[1];
                 image.src = post + path;
             }
         })

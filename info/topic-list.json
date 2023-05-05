@@ -1,11 +1,1 @@
-{
-    "test": [
-        {
-            "abstr": "in this blog post, we will mainly cover three important papers: ",
-            "ahref": "sample.md",
-            "date": "2023-05-05",
-            "tag": [],
-            "title": null
-        }
-    ]
-}
+{"AI + Numerical Algorithms":[{"abstr":"The idea is simple: a hidden layer's job is to extract good enough feature. ","ahref":"forward-forward.md","date":"2023-05-05","tag":[],"title":"Understanding Forward-Forward"}]}
