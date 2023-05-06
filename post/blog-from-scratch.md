@@ -68,8 +68,77 @@ d-----          2023/5/6      1:22                site
 -a----          2023/5/6      1:59           1087 LICENSE
 ```
 
+Generate essential meta information with: 
+
+```
+cargo -Z unstable-options -C blog-scan run --release -- -D ..
+```
+
 Then a simple git push will make it work. 
 
-## Future Work
+## Optimization
 
-Currently, this blog site is already a minimal viable prototype, but it still needs more style sheets and a more friendly archive search page. 
+Loading big javascript files can be potentially slow. Fortunately, in html5, we can add `defer` attribute to scripts to fetch them in parallel. 
+
+In practice, I only marked external utilities as `defer`, and add spinning locks to wait for some objects. 
+
+## Prettify the Page
+
+I add some interactive functionalities comparable to modern frontend enigneering. For example, these code appear in `site/post.html`. 
+
+I don't know if several event listeners may run in parallel, so I add some brainless locks. As all variables in javascript is volatile. 
+
+A long scroll or moving mouse to the top will reveal the navigation bar. 
+
+Correspondently, leaving the mouse from the navigation bar wiil hide it away, and scrolling down will do the same job. 
+
+More style sheet stuff is added and make the page look better. 
+
+```javascript
+// a scrolling var
+var scrollingLock = false;
+var lastScrollTop = 0;
+// hide navigation bar
+function hideNavigation() {
+    let navi = document.querySelector("#navi-wrapper");
+    let naviClass = navi.getAttribute("class") || "";
+    navi.setAttribute("class", naviClass + " hidding");
+}
+// reveal navigation bar
+function revealNavigation() {
+    let navi = document.querySelector("#navi-wrapper");
+    let naviClass = navi.getAttribute("class") || "";
+    navi.setAttribute("class", (naviClass + " ").replaceAll("hidding ", ""));
+}
+// reveal navigation bar when scrolling up
+// hide navigation bar when scrolling down
+window.addEventListener("scroll", (_ev) => {
+    if(scrollingLock) { return; }
+    scrollingLock = true;
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    if (st > lastScrollTop) {
+        hideNavigation();
+    } else if (st < lastScrollTop - 20) {
+        revealNavigation();
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+    scrollingLock = false;
+})
+// reveal navigation bar when mouse is moved to the top
+var mouseMoveLock = false;
+var lastMouseY = 0;
+window.addEventListener("mousemove", (ev) => {
+    if (mouseMoveLock) { return; }
+    mouseMoveLock = true;
+    let event = ev || window.event;
+    let mousePos = { x: event.clientX, y: event.clientY };
+    let height = (document.getElementById("navi-wrapper").clientHeight) * 0.9;
+    if (mousePos.y < height) {
+        revealNavigation();
+    } else if (mousePos.y > lastMouseY) {
+        hideNavigation();
+    }
+    lastMouseY = mousePos.y;
+    mouseMoveLock = false;
+});
+```
