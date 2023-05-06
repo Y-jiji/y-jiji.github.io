@@ -11,8 +11,10 @@
     <nav id="navi"></nav>
     <!-- list 4 most recent blog posts from each topic -->
     <div id="topic-list"></div>
+    <!-- load configuration -->
     <script src="config.js"></script>
-    <script src="navigation.js"></script>    <!-- load navigation bar  -->
+    <!-- load navigation bar  -->
+    <script src="navigation.js"></script>
     <script>
         /* fetch generated index of topics */
         fetch(info + "topic-list.json?nocache=" + (new Date()).toISOString().split('T')[0])
