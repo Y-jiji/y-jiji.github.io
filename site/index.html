@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta http-equiv="pragma" content="no-cache">
+    
 	<link rel="stylesheet" src="index.css"/>
 </head>
 <body>
@@ -14,7 +14,7 @@
 	<script src="navigation.js"></script>	<!-- load navigation bar  -->
 	<script>
 		/* fetch generated index of topics */
-		fetch(info + "topic-list.json")
+		fetch(info + "topic-list.json?nocache=" + (new Date()).toISOString().split('T')[0])
 		/* -------------------------------------------------------------------- //
 			the topic list json should look like { 
 				"<topic>" : [ 

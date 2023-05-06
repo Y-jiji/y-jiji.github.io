@@ -1,7 +1,7 @@
 <!DOCTYPE html>
+
 <head>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta http-equiv="pragma" content="no-cache">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                 if (query[i] == ')') { cnt -= 1; }
                 if (cnt == 0 && (query[i] == '|' || query[i] == '&')) {
                     let resultL = await processQuery(query.slice(0, i));
-                    let resultR = await processQuery(query.slice(i+1, query.length));
+                    let resultR = await processQuery(query.slice(i + 1, query.length));
                     if (!resultL || !resultR) { return false }
                     if (query[i] == '|') {
                         return resultL.concat(resultR).unique();
@@ -46,11 +46,11 @@
             // now this item should be atomic, split it into tag and value
             query = query.replace("(", "").replace(")", "").trim();
             let split = query.indexOf(":");
-            let [tag, value] = [query.slice(0, split), query.slice(split+1, query.length)];
+            let [tag, value] = [query.slice(0, split), query.slice(split + 1, query.length)];
             // fetch index file and process query
-            let index = await fetch(info + "index-" + tag + ".json")
+            let index = await fetch(info + "index-" + tag + ".json" + "?nocache=" + (new Date()).toISOString().split('T')[0])
                 .then((value) => {
-                    if (value.ok) { return value.text().then((value) => value) } 
+                    if (value.ok) { return value.text().then((value) => value) }
                     else { return "{}" }
                 })
                 .then(JSON.parse);
