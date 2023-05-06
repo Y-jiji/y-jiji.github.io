@@ -79,8 +79,8 @@ var Preview = {
       this.buffer.innerHTML = this.oldtext = text;
       this.mjRunning = true;
       MathJax.Hub.Queue(
-	["Typeset",MathJax.Hub,this.buffer],
-	["PreviewDone",this]
+    ["Typeset",MathJax.Hub,this.buffer],
+    ["PreviewDone",this]
       );
     }
   },

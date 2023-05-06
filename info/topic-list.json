@@ -1,1 +1,61 @@
-{"AI + Numerical Algorithms":[{"abstr":"The idea is simple: a hidden layer's job is to extract good enough feature. ","ahref":"forward-forward.md","date":"2023-05-05","tag":[],"title":"Understanding Forward-Forward"}],"Software Engineering":[{"abstr":"I tried to construct a blog site without frontend stack, only using browser-native css, html, and javascript. ","ahref":"blog-from-scratch.md","date":"2023-05-06","tag":[],"title":"A Static Site Generator from Scratch"}]}
+{
+    "AI + Numerical Algorithms": [
+        {
+            "abstr": "The idea is simple: a hidden layer's job is to extract good enough feature. ",
+            "ahref": "forward-forward.md",
+            "date": "2023-05-05",
+            "tag": [
+                "Deep Learning",
+                "Training Algorithm"
+            ],
+            "title": "Understanding Forward-Forward"
+        },
+        {
+            "abstr": "Interesting and difficult as constrained satisfication problems are, we still want to explore them in distributed synario. ",
+            "ahref": "ma-rl-1.md",
+            "date": "2023-05-06",
+            "tag": [
+                "Reinforcement Learning",
+                "Multi-Agent Systems"
+            ],
+            "title": "Understanding Distributed Constraint Satisfication"
+        }
+    ],
+    "Programming Languages and Computation Theory": [
+        {
+            "abstr": "Shell script languages sucks, and python has too much freedom. In rush shell script language, we try to intergrate some merits from static languages. ",
+            "ahref": "rush-novel-shell-script.md",
+            "date": "2023-05-06",
+            "tag": [
+                "Practical",
+                "TODO"
+            ],
+            "title": "Rush: a novel shell script language"
+        }
+    ],
+    "Software Engineering": [
+        {
+            "abstr": "I tried to construct a blog site without frontend stack, only using browser-native CSS, HTML, and javascript. ",
+            "ahref": "blog-from-scratch.md",
+            "date": "2023-05-06",
+            "tag": [
+                "Web Development",
+                "Web Dev"
+            ],
+            "title": "A Static Site Generator from Scratch"
+        }
+    ],
+    "System Design and Implementation": [
+        {
+            "abstr": "Permission Chain",
+            "ahref": "fabric-optimization.md",
+            "date": "2023-05-06",
+            "tag": [
+                "Paper Review",
+                "Web3",
+                "TODO"
+            ],
+            "title": "A Note on HyperLedger Fabric, Fabric++, and Fabric#"
+        }
+    ]
+}

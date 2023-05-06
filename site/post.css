@@ -10,11 +10,75 @@ modifications
 author: Y-jiji <https://github.com/Y-jiji>
 description: modified some fonts, and unordered and ordered list support
 */
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local("Josefin Sans Light"), local("JosefinSans-Light"), 
+    url(josefinsans-1.woff) format("woff");
+}
 
-#navi {
-    padding-left: max(10vh, 10px);
-    padding-right: max(10vh, 10px);
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local("Josefin Sans"), local("JosefinSans"), 
+    url(josefinsans-2.woff) format("woff");
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local("Josefin Sans Bold"), local("JosefinSans-Bold"), 
+    url(josefinsans-3.woff) format("woff");
+}
+
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+body.inverted {
+    color: #eee;
+    background-color: #222;
+}
+
+#navi-wrapper.hidding {
+    transform: translateY(-100%);
+}
+
+#navi-wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 5px double #af2020;
     text-align: center;
+    padding: 10px;
+    background-color: white;
+    z-index: 100;
+    transition: 0.5s all cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+#navi-wrapper > * {
+    display: inline;
+}
+
+#icon {
+    display: inline-block;
+    padding-right: 10vw;
+}
+
+#icon > h3 {
+    display: inline-block;
+    font-family: 'Josefin Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
 }
 
 #navi > * {
@@ -22,39 +86,31 @@ description: modified some fonts, and unordered and ordered list support
 }
 
 #navi > div > button {
+    display: inline-block;
     padding: 15px 32px;
-    border: 1px dashed #af2020;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border: 2px dashed #af2020;
     background-color: inherit;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    transition: all 0.5s;
+}
+
+#navi > div > button:hover {
+    transform: scale(1.05);
+    box-shadow: 5px -5px #baa3a3;
 }
 
 #cont {
     margin-left: max(10px, 10vw);
     margin-right: max(10px, 10vw);
-}
-
-@font-face {
-    font-family: 'Josefin Sans';
-    font-style: normal;
-    font-weight: 300;
-    src: local("Josefin Sans Light"), local("JosefinSans-Light"), url(https://themes.googleusercontent.com/static/fonts/josefinsans/v4/C6HYlRF50SGJq1XyXj04z2B7wJ9CoPCp9n30ZBThZ1I.woff) format("woff");
-}
-
-@font-face {
-    font-family: 'Josefin Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local("Josefin Sans"), local("JosefinSans"), url(https://themes.googleusercontent.com/static/fonts/josefinsans/v4/xgzbb53t8j-Mo-vYa23n5qRDOzjiPcYnFooOUGCOsRk.woff) format("woff");
-}
-
-@font-face {
-    font-family: 'Josefin Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: local("Josefin Sans Bold"), local("JosefinSans-Bold"), url(https://themes.googleusercontent.com/static/fonts/josefinsans/v4/C6HYlRF50SGJq1XyXj04zxAPw1J91axKNXP_-QX9CC8.woff) format("woff");
+    padding-bottom: 50vh;
+    padding-top: 10vh;
 }
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
@@ -93,10 +149,6 @@ description: modified some fonts, and unordered and ordered list support
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-}
-
-#cont body {
-    margin: 0;
 }
 
 #cont a {
@@ -385,19 +437,6 @@ description: modified some fonts, and unordered and ordered list support
 #cont html {
     font-size: 100%;
     -webkit-tap-highlight-color: transparent;
-}
-
-#cont body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    line-height: 1.428571429;
-    color: #333333;
-    background-color: #f7f7f7;
-}
-
-#cont body.inverted {
-    color: #eee;
-    background-color: #222;
 }
 
 #cont input,

@@ -1,0 +1,30 @@
+#navi {
+    margin: 10px;
+    padding-left: max(10vw, 10px);
+    padding-right: max(10vw, 10px);
+    text-align: center;
+}
+
+#navi > * {
+    display: inline;
+}
+
+#navi > div > button {
+    padding: 15px 32px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border: 2px dashed #af2020;
+    background-color: inherit;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: all 0.5s;
+}
+
+#navi > div > button:hover {
+    transform: scale(1.05);
+    box-shadow: 5px -5px #baa3a3;
+}

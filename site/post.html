@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <head>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<link rel="stylesheet" href="post.css">
-    <script src="config.js"></script>	<!-- load global config   -->
-	<script src="marked.js"></script>	<!-- load markdown parser -->
+    <link rel="stylesheet" href="post.css">
+    <script src="config.js"></script>    <!-- load global config   -->
+    <script src="marked.js"></script>    <!-- load markdown parser -->
     <script src="js-yaml.js"></script>
     <script src="yamlFront.js"></script>
     <script type="text/x-mathjax-config">
@@ -21,41 +21,93 @@
 </head>
 
 <body>
-	<nav id="navi"></nav> <!-- navigation container -->
-	<div id="prev"></div> <!-- blog list container -->
-	<div id="cont"></div> <!-- blog content container -->
-	<div id="foot"></div> <!-- foot content container -->
+    <div id="navi-wrapper">
+        <div id="icon"><h3>Y-jiji's Blog</h3></div>
+        <div id="navi"></div> <!-- navigation container -->
+    </div>
+    <div id="cont"></div> <!-- blog content container -->
+    <div id="prev"></div> <!-- blog list container -->
+    <div id="foot"></div> <!-- foot content container -->
 
-	<!-- script for loading blog posts from source -->
-	<script src="navigation.js"></script>	<!-- load navigation bar  -->
-	<script>
-		let parameter = new URLSearchParams(window.location.search);
-		// parse and render markdown content
-		let file = new String(parameter.get("file")).split(/^\//, 1)[0].split(/\.md$/, 1)[0] + ".md";
-		// parse markdown and do miscellanious after work
-		fetch(post + file, {"credentials": "include"})
-		.then(async (value) => await value.text())
+    <!-- script for loading blog posts from source -->
+    <script src="navigation.js"></script>    <!-- load navigation bar  -->
+    <!-- script for navigation bar animation -->
+    <script>
+        // a scrolling var
+        var scrollingLock = false;
+        var lastScrollTop = 0;
+        // hide navigation bar
+        function hideNavigation() {
+            let navi = document.querySelector("#navi-wrapper");
+            let naviClass = navi.getAttribute("class") || "";
+            navi.setAttribute("class", naviClass + " hidding");
+        }
+        // reveal navigation bar
+        function revealNavigation() {
+            let navi = document.querySelector("#navi-wrapper");
+            let naviClass = navi.getAttribute("class") || "";
+            navi.setAttribute("class", (naviClass + " ").replaceAll("hidding ", ""));
+        }
+        // reveal navigation bar when scrolling up
+        // hide navigation bar when scrolling down
+        window.addEventListener("scroll", (_ev) => {
+            if(scrollingLock) { return; }
+            scrollingLock = true;
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+            if (st > lastScrollTop) {
+                hideNavigation();
+            } else if (st < lastScrollTop - 20) {
+                revealNavigation();
+            }
+            lastScrollTop = st <= 0 ? 0 : st;
+            scrollingLock = false;
+        })
+        // reveal navigation bar when mouse is moved to the top
+        var mouseMoveLock = false;
+        var lastMouseY = 0;
+        window.addEventListener("mousemove", (ev) => {
+            // if (mouseMoveLock) { return; }
+            mouseMoveLock = true;
+            let event = ev || window.event;
+            let mousePos = { x: event.clientX, y: event.clientY };
+            let height = (document.getElementById("navi-wrapper").clientHeight) * 0.9;
+            if (mousePos.y < height) {
+                revealNavigation();
+            } else if (mousePos.y > lastMouseY) {
+                hideNavigation();
+            }
+            lastMouseY = mousePos.y;
+            mouseMoveLock = false;
+        });
+    </script>
+    <script>
+        let parameter = new URLSearchParams(window.location.search);
+        // parse and render markdown content
+        let file = new String(parameter.get("file")).split(/^\//, 1)[0].split(/\.md$/, 1)[0] + ".md";
+        // parse markdown and do miscellanious after work
+        fetch(post + file, {"credentials": "include"})
+        .then(async (value) => await value.text())
         .then(text => {
             let new_text = text.replaceAll("\\\\", "\\\\\\\\");
             console.log(new_text);
             return new_text;
         })
-		.then(text => {
+        .then(text => {
             let oldLexerLex = marked.Lexer.lex;
             marked.Lexer.lex = function (text, options) {
                 let parsed = yamlFront.loadFront(text)
                 let cKey = '__content'
                 return oldLexerLex(parsed[cKey], options)
             }
-			document.getElementById("cont").innerHTML = marked.parse(text);
-			return true; })
-		.then(_any => {
+            document.getElementById("cont").innerHTML = marked.parse(text);
+            return true; })
+        .then(_any => {
             // chaining mathjax rendering
             let body = document.getElementsByTagName("body")[0];
-			let script = document.createElement("script");
-			script.setAttribute("type", "text/javascript");
+            let script = document.createElement("script");
+            script.setAttribute("type", "text/javascript");
             script.setAttribute("src", site + "mathjax/MathJax.js");
-			body.appendChild(script);
+            body.appendChild(script);
         })
         .then(_any => {
             // there should be a marked plugin called marked-base-url that can presumably do this job for me
@@ -75,62 +127,62 @@
                 }
             }
         })
-		// the table of meta information about all files
-		/* ---------------------------------------------------------------- //
-			{
-				"<path>": {
-					"topic": "about",
-					"timestamp":  "2024-02-30",
-				}
-			}
-		// ---------------------------------------------------------------- */
-		fetch(info + "table-meta.json?nocache=" + (new Date()).toISOString().split('T')[0], {"credentials": "include"})
-		.then(async (value) => await value.text())
-		.then(JSON.parse)
-		.then((tableMeta) => {
-			let current = tableMeta[file]["topic"];
-			let cntAnother = 0;
-			let cntCurrent = 0;
-			let arrAnother = [];
-			let arrCurrent = [];
-			const lenAnother = 3;
-			const lenCurrent = 2; 
-			for (let [key, val] of Object.entries(tableMeta)) {
-				if (val["topic"] == current) {
-					let randNum = Math.floor(Math.random() * cntCurrent);
-					if (cntCurrent < lenCurrent) {
-						arrCurrent.push([key, val]);
-					} else if (randNum < lenCurrent) {
-						arrCurrent[randNum] = [key, val];
-					}
-					cntCurrent += 1;
-				} else {
-					let randNum = Math.floor(Math.random() * cntAnother);
-					if (cntAnother < lenAnother) {
-						arrAnother.push([key, val]);
-					} else if (randNum < lenAnother) {
-						arrAnother[randNum] = [key, val];
-					}
-					cntAnother += 1;
-				}
-			}
-			return arrAnother.concat(arrCurrent); 
-		})
-		.then((arrayMeta) => {
+        // the table of meta information about all files
+        /* ---------------------------------------------------------------- //
+            {
+                "<path>": {
+                    "topic": "about",
+                    "timestamp":  "2024-02-30",
+                }
+            }
+        // ---------------------------------------------------------------- */
+        fetch(info + "table-meta.json?nocache=" + (new Date()).toISOString().split('T')[0], {"credentials": "include"})
+        .then(async (value) => await value.text())
+        .then(JSON.parse)
+        .then((tableMeta) => {
+            let current = tableMeta[file]["topic"];
+            let cntAnother = 0;
+            let cntCurrent = 0;
+            let arrAnother = [];
+            let arrCurrent = [];
+            const lenAnother = 3;
+            const lenCurrent = 2; 
+            for (let [key, val] of Object.entries(tableMeta)) {
+                if (val["topic"] == current) {
+                    let randNum = Math.floor(Math.random() * cntCurrent);
+                    if (cntCurrent < lenCurrent) {
+                        arrCurrent.push([key, val]);
+                    } else if (randNum < lenCurrent) {
+                        arrCurrent[randNum] = [key, val];
+                    }
+                    cntCurrent += 1;
+                } else {
+                    let randNum = Math.floor(Math.random() * cntAnother);
+                    if (cntAnother < lenAnother) {
+                        arrAnother.push([key, val]);
+                    } else if (randNum < lenAnother) {
+                        arrAnother[randNum] = [key, val];
+                    }
+                    cntAnother += 1;
+                }
+            }
+            return arrAnother.concat(arrCurrent); 
+        })
+        .then((arrayMeta) => {
             console.log(arrayMeta);
-			let prevList = document.getElementById("prev");
-			for (let [href, info] of arrayMeta) {
-				let prevItem = document.createElement("div");
-				prevItem.setAttribute("class", "prev-item");
+            let prevList = document.getElementById("prev");
+            for (let [href, info] of arrayMeta) {
+                let prevItem = document.createElement("div");
+                prevItem.setAttribute("class", "prev-item");
                 let hrefRedirected = site + "post.html?file=" + href;
-				prevItem.innerHTML = `
-					<div class="prev-item-title">${info["title"]}</div>
-					<div class="prev-item-ahref">
-						<a href="${hrefRedirected}">READ -></a>
-					</div>
-				`;
+                prevItem.innerHTML = `
+                    <div class="prev-item-title">${info["title"]}</div>
+                    <div class="prev-item-ahref">
+                        <a href="${hrefRedirected}">READ</a>
+                    </div>
+                `;
                 prevList.appendChild(prevItem);
-			}
-		})
-	</script>
+            }
+        })
+    </script>
 </body>

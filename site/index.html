@@ -1,85 +1,91 @@
 <!DOCTYPE html>
 <head>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-	<h1>Y-jiji's Blog</h1>
-	<!-- navigation buttons -->
-	<nav id="navi"></nav>
-	<!-- list 4 most recent blog posts from each topic -->
-	<div id="topic-list"></div>
-	<script src="config.js"></script>
-	<script src="navigation.js"></script>	<!-- load navigation bar  -->
-	<script>
-		/* fetch generated index of topics */
-		fetch(info + "topic-list.json?nocache=" + (new Date()).toISOString().split('T')[0])
-		/* -------------------------------------------------------------------- //
-			the topic list json should look like { 
-				"<topic>" : [ 
-		 			{
-						"title" : "<title>", 
-				 		"abstr" : "<abstract>", 
-				 		"ahref" : "<ahref>", 
-					}
-				],
-				"<topic>" : [
-		 			{
-						"title" : "<title>", 
-				 		"abstr" : "<abstract>", 
-				 		"ahref" : "<ahref>", 
-					}
-				]
-			}
-		// -------------------------------------------------------------------- */
-		.then(async (value) => await value.text())
-		.then((value) => Object.entries(JSON.parse(value)))
-		// foreach topic, match out the articles
-		.then((entry) => entry.forEach(([key, art]) => {
-			// create a topic description
-			let topicHeadHTML = document.createElement("h2");
-				topicHeadHTML.setAttribute("class", "topic-title");
-				topicHeadHTML.innerText = key;
-			console.log(topicHeadHTML.outerHTML);
-			// create a blank topic item
-			let topicItemHTML = document.createElement("div");
-				topicItemHTML.setAttribute("class", "topic-item artic-list");
-				topicItemHTML.appendChild(topicHeadHTML);
-			// foreach article, make an html element in current topic
-			art.slice(0, 4).forEach((art) => {
-				console.log("title: " + art["title"]);
-				console.log("abstr: " + art["abstr"]);
-				console.log("ahref: " + art["ahref"]);
-				/* create title item */
-				let titleItemHTML = document.createElement("h3");
-					titleItemHTML.setAttribute("class", "artic-title");
-					titleItemHTML.innerText = art["title"];
-				console.log(titleItemHTML.outerHTML);
-				/* create abstr item */
-				let abstrItemHTML = document.createElement("p");
-					abstrItemHTML.setAttribute("class", "artic-abstr");
-					abstrItemHTML.innerText = art["abstr"];
-				console.log(abstrItemHTML.outerHTML);
-				/* create ahref item */
-				let ahrefItemHTML = document.createElement("a");
-					ahrefItemHTML.setAttribute("class", "artic-ahref");
-					ahrefItemHTML.setAttribute("href", site + "post.html?file=" + art["ahref"]);
-					ahrefItemHTML.innerText = "Read ->";
-				console.log(ahrefItemHTML.outerHTML);
-				/* compose article item with the previous items */
-				let articItemHTML = document.createElement("div");
-					articItemHTML.setAttribute("class", "artic-item");
-					articItemHTML.appendChild(titleItemHTML);
-					articItemHTML.appendChild(abstrItemHTML);
-					articItemHTML.appendChild(ahrefItemHTML);
-				console.log(articItemHTML.outerHTML);
-				topicItemHTML.appendChild(articItemHTML);
-			});
-			// append topic item to topic list
-			let topicListHTML = document.getElementById("topic-list");
-			topicListHTML.appendChild(topicItemHTML);
-		}))
-	</script>
+    <h1>Y-jiji's Blog</h1>
+    <div id="moto"> There's still another million miles to come. </div>
+    <!-- navigation buttons -->
+    <nav id="navi"></nav>
+    <!-- list 4 most recent blog posts from each topic -->
+    <div id="topic-list"></div>
+    <script src="config.js"></script>
+    <script src="navigation.js"></script>    <!-- load navigation bar  -->
+    <script>
+        /* fetch generated index of topics */
+        fetch(info + "topic-list.json?nocache=" + (new Date()).toISOString().split('T')[0])
+        /* -------------------------------------------------------------------- //
+            the topic list json should look like { 
+                "<topic>" : [ 
+                     {
+                        "title" : "<title>", 
+                         "abstr" : "<abstract>", 
+                         "ahref" : "<ahref>", 
+                    }
+                ],
+                "<topic>" : [
+                     {
+                        "title" : "<title>", 
+                         "abstr" : "<abstract>", 
+                         "ahref" : "<ahref>", 
+                    }
+                ]
+            }
+        // -------------------------------------------------------------------- */
+        .then(async (value) => await value.text())
+        .then((value) => Object.entries(JSON.parse(value)))
+        // foreach topic, match out the articles
+        .then((entry) => entry.forEach(([key, art]) => {
+            // create a topic description
+            let topicHeadHTML = document.createElement("h2");
+                topicHeadHTML.setAttribute("class", "topic-title");
+                topicHeadHTML.innerText = key;
+            console.log(topicHeadHTML.outerHTML);
+            // create a article list
+            let articListHTML = document.createElement("div");
+                articListHTML.setAttribute("class", "artic-list");
+            // select the most recent articles
+            art.sort((a, b) => a["date"] < b["date"]);
+            // foreach article, make an html element in current topic
+            art.slice(0, 4).forEach((art) => {
+                console.log("title: " + art["title"]);
+                console.log("abstr: " + art["abstr"]);
+                console.log("ahref: " + art["ahref"]);
+                console.log("tag:" + art["tag"]);
+                /* create title item */
+                let titleItemHTML = document.createElement("h3");
+                    titleItemHTML.setAttribute("class", "artic-title");
+                    titleItemHTML.innerText = art["title"];
+                /* create abstr item */
+                let abstrItemHTML = document.createElement("p");
+                    abstrItemHTML.setAttribute("class", "artic-abstr");
+                    abstrItemHTML.innerText = art["abstr"];
+                /* create date item */
+                let tagAndDateItemHTML = document.createElement("p");
+                    tagAndDateItemHTML.setAttribute("class", "artic-tag-list");
+                    function makeTag(y) { return "<small class=tag-item>#" + y + "</small>"; }
+                    tagAndDateItemHTML.innerHTML = 
+                        [makeTag(art["date"])].concat(art["tag"]).reduce((x, y, _, __) => { return x + makeTag(y) });
+                /* compose article item with the previous items */
+                let articItemHTML = document.createElement("div");
+                    articItemHTML.setAttribute("class", "artic-item");
+                    articItemHTML.appendChild(titleItemHTML);
+                    articItemHTML.appendChild(tagAndDateItemHTML);
+                    articItemHTML.appendChild(abstrItemHTML);
+                articItemHTML.addEventListener("click", (_ev) => {window.location.href = site + "post.html?file=" + art["ahref"]});
+                articListHTML.appendChild(articItemHTML);
+            });
+            // create a blank topic item, add topic head and article list
+            let topicItemHTML = document.createElement("div");
+                topicItemHTML.setAttribute("class", "topic-item");
+                topicItemHTML.appendChild(topicHeadHTML);
+                topicItemHTML.appendChild(articListHTML);
+            // append topic item to topic list
+            let topicListHTML = document.getElementById("topic-list");
+            topicListHTML.appendChild(topicItemHTML);
+        }))
+    </script>
 </body>
 

@@ -81,9 +81,10 @@ fn main() {
                     } else if key == "date" {
                         topic_entry.1.date = value.as_str().map(|s| s.to_string());
                     } else if key == "tag" {
-                        match value.as_str() {
-                            Some(s) => topic_entry.1.tag.push(s.to_string()),
-                            None => {}
+                        match value {
+                            serde_yaml::Value::String(s) => topic_entry.1.tag.push(s.to_string()),
+                            serde_yaml::Value::Sequence(s) => topic_entry.1.tag.extend(s.iter().filter_map(|s| s.as_str()).map(|s| s.to_string())),
+                            _ => println!("Warning: unrecognized tag {value:?}"),
                         };
                     }
                     let mut for_each_entry = |key: &String, value: serde_yaml::Value, file: &String| {
