@@ -3,7 +3,6 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<link rel="stylesheet" href="post.css">
     <script src="config.js"></script>	<!-- load global config   -->
-	<script src="navigation.js"></script>	<!-- load navigation bar  -->
 	<script src="marked.js"></script>	<!-- load markdown parser -->
     <script src="js-yaml.js"></script>
     <script src="yamlFront.js"></script>
@@ -28,6 +27,7 @@
 	<div id="foot"></div> <!-- foot content container -->
 
 	<!-- script for loading blog posts from source -->
+	<script src="navigation.js"></script>	<!-- load navigation bar  -->
 	<script>
 		let parameter = new URLSearchParams(window.location.search);
 		// parse and render markdown content
@@ -50,11 +50,12 @@
 			document.getElementById("cont").innerHTML = marked.parse(text);
 			return true; })
 		.then(_any => {
-            let head = document.getElementsByTagName("head")[0];
+            // chaining mathjax rendering
+            let body = document.getElementsByTagName("body")[0];
 			let script = document.createElement("script");
 			script.setAttribute("type", "text/javascript");
             script.setAttribute("src", site + "mathjax/MathJax.js");
-			head.appendChild(script);
+			body.appendChild(script);
         })
         .then(_any => {
             // there should be a marked plugin called marked-base-url that can presumably do this job for me
