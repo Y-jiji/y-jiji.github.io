@@ -12,7 +12,23 @@ description: modified some fonts, and unordered and ordered list support
 */
 
 #navi {
-    position: sticky;
+    padding-left: max(10vh, 10px);
+    padding-right: max(10vh, 10px);
+    text-align: center;
+}
+
+#navi > * {
+    display: inline;
+}
+
+#navi > div > button {
+    padding: 15px 32px;
+    border: 1px dashed #af2020;
+    background-color: inherit;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 #cont {
