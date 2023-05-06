@@ -71,8 +71,6 @@ Although in previous sections we described FF method as computationally efficien
 
 ## Suppressing Large Variance
 
-
-
 ## Nothing But Feature Extraction
 
 About 7 or 8 years ago, there is something called feature-enigneering. 
