@@ -11,6 +11,10 @@ author: Y-jiji <https://github.com/Y-jiji>
 description: modified some fonts, and unordered and ordered list support
 */
 
+#navi {
+    position: sticky;
+}
+
 #cont {
     margin-left: max(10px, 10vw);
     margin-right: max(10px, 10vw);

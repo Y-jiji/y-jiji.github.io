@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local("Josefin Sans Light"), local("JosefinSans-Light"), url(https://themes.googleusercontent.com/static/fonts/josefinsans/v4/C6HYlRF50SGJq1XyXj04z2B7wJ9CoPCp9n30ZBThZ1I.woff) format("woff");
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local("Josefin Sans"), local("JosefinSans"), url(https://themes.googleusercontent.com/static/fonts/josefinsans/v4/xgzbb53t8j-Mo-vYa23n5qRDOzjiPcYnFooOUGCOsRk.woff) format("woff");
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local("Josefin Sans Bold"), local("JosefinSans-Bold"), url(https://themes.googleusercontent.com/static/fonts/josefinsans/v4/C6HYlRF50SGJq1XyXj04zxAPw1J91axKNXP_-QX9CC8.woff) format("woff");
+}
+
+.topic-item p,
+.topic-item li,
+.topic-item ul,
+.topic-item ol {
+    margin: 0 0 9px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 100;
+}
+
+body > h1 {
+    text-align: center;
+}
+
+#topic-list {
+    padding-left: max(10vh, 10px);
+    padding-right: max(10vh, 10px);
+}
+
+body > h1,
+.topic-item h1,
+.topic-item h2,
+.topic-item h3,
+.topic-item h4,
+.topic-item h5,
+.topic-item h6,
+.topic-item .h1,
+.topic-item .h2,
+.topic-item .h3,
+.topic-item .h4,
+.topic-item .h5,
+.topic-item .h6 {
+    font-family: 'Josefin Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+.topic-item {
+    border-top: #000 dashed 2px !important;
+    padding-top: 15px;
+    margin-top: min(20px, 10vh);
+    margin-bottom: min(20px, 10vh);
+}
+
+.artic-item::after {
+    content: "";
+}
+
+#navi {
+    padding-left: max(10vh, 10px);
+    padding-right: max(10vh, 10px);
+    text-align: center;
+}
+
+#navi > * {
+    display: inline;
+}
+
+#navi > div > button {
+    padding: 15px 32px;
+    border: 1px dashed #af2020;
+    background-color: inherit;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
