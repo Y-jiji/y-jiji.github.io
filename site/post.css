@@ -467,13 +467,11 @@ body.inverted {
 }
 
 #cont img {
-    vertical-align: middle;
-}
-
-#cont .img-responsive {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     height: auto;
-    max-width: 100%;
+    max-width: min(100%, 700px);
 }
 
 #cont .img-rounded {

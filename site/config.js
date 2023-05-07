@@ -1,5 +1,5 @@
-// const root = "http://localhost:3000/"
-const root = "https://y-jiji.github.io/blog/"
+const root = "http://localhost:3000/"
+// const root = "https://y-jiji.github.io/blog/"
 
 /* the site to serve from */
 const site = root+"site/"
