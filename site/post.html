@@ -2,9 +2,9 @@
 <head>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="post.css">
-    <script src="marked.js" defer></script>    <!-- load markdown parser -->
-    <script src="js-yaml.js" defer></script>
-    <script src="yamlFront.js" defer></script>
+    <script src="marked.js"></script>    <!-- load markdown parser -->
+    <script src="js-yaml.js"></script>
+    <script src="yamlFront.js"></script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           extensions: ["tex2jax.js"],
@@ -24,12 +24,17 @@
         <div id="icon"><h3>Y-jiji's Blog</h3></div>
         <div id="navi"></div> <!-- navigation container -->
     </div>
-    <div id="cont"></div> <!-- blog content container -->
-    <div id="prev"></div> <!-- blog list container -->
-    <div id="foot"></div> <!-- foot content container -->
+    <!-- blog content container -->
+    <div id="cont">
+        <div> Loading Content ... </div>
+    </div>
+    <!-- blog list container -->
+    <div id="prev"></div>
+    <!-- foot content container -->
+    <div id="foot"></div>
 
     <!-- script for loading blog posts from source -->
-    <script src="config.js"></script>    <!-- load global config   -->
+    <script src="config.js"></script>        <!-- load global config   -->
     <script src="navigation.js"></script>    <!-- load navigation bar  -->
     <!-- script for navigation bar animation -->
     <script>
@@ -80,6 +85,7 @@
             mouseMoveLock = false;
         });
     </script>
+    <!-- script for loading blog posts from source -->
     <script>
         let parameter = new URLSearchParams(window.location.search);
         // parse and render markdown content
@@ -93,7 +99,7 @@
             return new_text;
         })
         .then(text => {
-            while (!window.marked) {}
+            while (!window.marked) { console.log("module marked is not loaded. ") }
             let oldLexerLex = marked.Lexer.lex;
             marked.Lexer.lex = function (text, options) {
                 let parsed = yamlFront.loadFront(text)
