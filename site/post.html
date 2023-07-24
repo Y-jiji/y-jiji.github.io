@@ -29,7 +29,9 @@
         <div> Loading Content ... </div>
     </div>
     <!-- blog list container -->
-    <div id="prev"></div>
+    <div id="prev">
+        <h1 id="prev-header"> ---------- Read More ---------- </h1>
+    </div>
     <!-- foot content container -->
     <div id="foot"></div>
 
@@ -45,13 +47,13 @@
         function hideNavigation() {
             let navi = document.querySelector("#navi-wrapper");
             let naviClass = navi.getAttribute("class") || "";
-            navi.setAttribute("class", naviClass + " hidding");
+            navi.setAttribute("class", (naviClass.replace("hidding", "") + " hidding").replace(/  +/, " ").replace(/^ /, ""));
         }
         // reveal navigation bar
         function revealNavigation() {
             let navi = document.querySelector("#navi-wrapper");
             let naviClass = navi.getAttribute("class") || "";
-            navi.setAttribute("class", (naviClass + " ").replaceAll("hidding ", ""));
+            navi.setAttribute("class", (naviClass + " ").replaceAll("hidding", "").replace(/  +/, " ").replace(/^ /, ""));
         }
         // reveal navigation bar when scrolling up
         // hide navigation bar when scrolling down
@@ -71,7 +73,6 @@
         var mouseMoveLock = false;
         var lastMouseY = 0;
         window.addEventListener("mousemove", (ev) => {
-            // if (mouseMoveLock) { return; }
             mouseMoveLock = true;
             let event = ev || window.event;
             let mousePos = { x: event.clientX, y: event.clientY };
@@ -183,9 +184,9 @@
                 prevItem.setAttribute("class", "prev-item");
                 let hrefRedirected = site + "post.html?file=" + href;
                 prevItem.innerHTML = `
-                    <div class="prev-item-title">${info["title"]}</div>
+                    <h3 class="prev-item-title">${info["title"]}</h3>
                     <div class="prev-item-ahref">
-                        <a href="${hrefRedirected}">READ</a>
+                        <a href="${hrefRedirected}">Click Here to Read -> </a>
                     </div>
                 `;
                 prevList.appendChild(prevItem);
