@@ -1,4 +1,4 @@
-// const root = "http://localhost:3000/"
+// const root = "http://localhost:7878/"
 const root = "https://y-jiji.github.io/blog/"
 
 /* the site to serve from */

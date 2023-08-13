@@ -1,0 +1,21 @@
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #222;
+        --text-color: white;
+        --faint-color: #717171;
+        --theme-color: #00bcbc;
+        --faint-theme-color: #334a4a;
+        --img-filter: invert(100%);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: white;
+        --text-color: black;
+        --faint-color: #afafaf;
+        --theme-color: #af2020;
+        --faint-theme-color: #baa3a3;
+        --img-filter: none;
+    }
+}

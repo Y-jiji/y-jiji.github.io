@@ -27,6 +27,11 @@
     padding-right: max(10vw, 10px);
 }
 
+body {
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
 body > h1 {
     text-align: center;
     font-family: 'Josefin Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -46,7 +51,7 @@ body > #moto {
     font-family: 'Josefin Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-style: italic;
     font-weight: 200;
-    color: #afafaf;
+    color: var(--faint-color);
     font-size: max(max(1vw, 1vh), 32px);
     margin: 20px;
     transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -68,12 +73,13 @@ body > #moto:hover {
 }
 
 #navi > div > button {
+    color: var(--text-color);
     padding: 15px 32px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 2px;
     margin-bottom: 2px;
-    border: 2px dashed #af2020;
+    border: 2px dashed var(--theme-color);
     background-color: inherit;
     text-align: center;
     text-decoration: none;
@@ -84,14 +90,14 @@ body > #moto:hover {
 
 #navi > div > button:hover {
     transform: scale(1.05);
-    box-shadow: 5px -5px #baa3a3;
+    box-shadow: 5px -5px var(--faint-theme-color);
 }
 
 div.topic-item {
     padding-top: 15px;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-top: #000 dashed 2px !important;
+    border-top: var(--text-color) dashed 2px !important;
     display: block;
 }
 
@@ -130,7 +136,7 @@ div.artic-item ol {
 div.artic-item {
     grid-column: auto;
     grid-row: auto;
-    border-left: 2px #af2020 solid;
+    border-left: 2px var(--theme-color) solid;
     margin-left: 2%;
     margin-top: 1%;
     padding-bottom: 3%;
@@ -149,19 +155,19 @@ div.artic-item h3 {
 }
 
 div.artic-item h3:hover {
-    color: #baa3a3;
+    color: var(--faint-theme-color);
 }
 
 div.artic-item small.tag-item {
     margin-right: 15px;
     display: inline-block;
-    border-bottom: 0.5px #af2020 dashed;
+    border-bottom: 0.5px var(--theme-color) dashed;
     transition: all 0.5s;
 }
 
 div.artic-item small.tag-item:hover {
-    color: #baa3a3;
-    border-bottom: 0.75px #af8080 solid;
+    color: var(--faint-theme-color);
+    border-bottom: 0.75px var(--faint-theme-color) solid;
 }
 
 div.artic-item p.artic-abstr {
@@ -169,5 +175,5 @@ div.artic-item p.artic-abstr {
 }
 
 div.artic-item p.artic-abstr:hover {
-    color: #baa3a3;
+    color: var(--faint-theme-color);
 }

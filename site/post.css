@@ -10,6 +10,7 @@ modifications
 author: Y-jiji <https://github.com/Y-jiji>
 description: modified some fonts, and unordered and ordered list support
 */
+
 @font-face {
     font-family: 'Josefin Sans';
     font-style: normal;
@@ -38,11 +39,8 @@ body {
     margin: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 13px;
-}
-
-body.inverted {
-    color: #eee;
-    background-color: #222;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 #navi-wrapper.hidding {
@@ -55,10 +53,11 @@ body.inverted {
     left: 0;
     right: 0;
     bottom: 0;
-    border-bottom: 5px double #af2020;
+    border-bottom: 5px double var(--theme-color);
     text-align: center;
     padding: 10px;
-    background-color: white;
+    background-color: var(--background-color);
+    color: var(--text-color);
     z-index: 100;
     transition: 0.5s all cubic-bezier(0.23, 1, 0.320, 1);
 }
@@ -86,13 +85,14 @@ body.inverted {
 }
 
 #navi>div>button {
+    color: var(--text-color);;
     display: inline-block;
     padding: 15px 32px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 2px;
     margin-bottom: 2px;
-    border: 2px dashed #af2020;
+    border: 2px dashed var(--theme-color);
     background-color: inherit;
     text-align: center;
     text-decoration: none;
@@ -103,7 +103,7 @@ body.inverted {
 
 #navi>div>button:hover {
     transform: scale(1.05);
-    box-shadow: 5px -5px #baa3a3;
+    box-shadow: 5px -5px var(--faint-theme-color);
 }
 
 #cont {
@@ -189,7 +189,7 @@ body.inverted {
 }
 
 #cont mark {
-    color: #000;
+    color: var(--text-color);
     background: #ff0;
 }
 
@@ -232,10 +232,6 @@ body.inverted {
     bottom: -0.25em;
 }
 
-#cont img {
-    border: 0;
-}
-
 #cont svg:not(:root) {
     overflow: hidden;
 }
@@ -247,7 +243,7 @@ body.inverted {
 #cont fieldset {
     padding: 0.35em 0.625em 0.75em;
     margin: 0 2px;
-    border: 1px solid #c0c0c0;
+    border: 1px solid var(--faint-color);
 }
 
 #cont legend {
@@ -327,7 +323,7 @@ body.inverted {
 
 @media print {
     * {
-        color: #000 !important;
+        color: var(--text-color) !important;
         text-shadow: none !important;
         background: transparent !important;
         box-shadow: none !important;
@@ -356,7 +352,7 @@ body.inverted {
 
     pre,
     blockquote {
-        border: 1px solid #999;
+        border: 1px solid var(--faint-color);
         page-break-inside: avoid;
     }
 
@@ -390,7 +386,7 @@ body.inverted {
     }
 
     select {
-        background: #fff !important;
+        background: var(--background-color) !important;
     }
 
     .navbar {
@@ -399,16 +395,16 @@ body.inverted {
 
     .table td,
     .table th {
-        background-color: #fff !important;
+        background-color: var(--background-color) !important;
     }
 
     .btn>.caret,
     .dropup>.btn>.caret {
-        border-top-color: #000 !important;
+        border-top-color: var(--text-color) !important;
     }
 
     .label {
-        border: 1px solid #000;
+        border: 1px solid var(--text-color);
     }
 
     .table {
@@ -417,7 +413,7 @@ body.inverted {
 
     .table-bordered th,
     .table-bordered td {
-        border: 1px solid #ddd !important;
+        border: 1px solid var(--faint-color) !important;
     }
 }
 
@@ -449,17 +445,17 @@ body.inverted {
 }
 
 #cont a {
-    color: #d9230f;
+    color: var(--theme-color);
     text-decoration: none;
 }
 
 #cont a:hover {
-    color: #91170a;
+    color: var(--theme-color);
     text-decoration: underline;
 }
 
 #cont a:focus {
-    color: #91170a;
+    color: var(--theme-color);
     text-decoration: underline;
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
@@ -471,24 +467,9 @@ body.inverted {
     margin-left: auto;
     margin-right: auto;
     height: auto;
+    border: 0;
+    filter: var(--img-filter);
     max-width: min(100%, 700px);
-}
-
-#cont .img-rounded {
-    border-radius: 6px;
-}
-
-#cont .img-thumbnail {
-    display: inline-block;
-    height: auto;
-    max-width: 100%;
-    padding: 4px;
-    line-height: 1.428571429;
-    background-color: #f7f7f7;
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
 }
 
 #cont .img-circle {
@@ -499,7 +480,7 @@ body.inverted {
     margin-top: 18px;
     margin-bottom: 18px;
     border: 0;
-    border-top: 1px solid #eeeeee;
+    border-top: 1px solid var(--faint-color);
 }
 
 #cont .sr-only {
@@ -557,7 +538,7 @@ body.inverted {
 #cont .h6 .small {
     font-weight: normal;
     line-height: 1;
-    color: #999999;
+    color: var(--faint-color);
 }
 
 #cont h1,
@@ -599,7 +580,7 @@ body.inverted {
 
 #cont h2,
 #cont .h2 {
-    border-top: #000 dashed 2px !important;
+    border-top: var(--text-color) dashed 2px !important;
     padding-top: 15px;
     font-size: 27px;
 }
@@ -676,7 +657,7 @@ body.inverted {
 #cont abbr[title],
 #cont abbr[data-original-title] {
     cursor: help;
-    border-bottom: 1px dotted #999999;
+    border-bottom: 1px dotted var(--faint-color);
 }
 
 #cont .initialism {
@@ -687,7 +668,7 @@ body.inverted {
 #cont blockquote {
     padding: 9px 18px;
     margin: 0 0 18px;
-    border-left: 5px solid #eeeeee;
+    border-left: 5px solid var(--text-color);
 }
 
 #cont blockquote p {
@@ -704,7 +685,7 @@ body.inverted {
 #cont blockquote .small {
     display: block;
     line-height: 1.428571429;
-    color: #999999;
+    color: var(--faint-color);
 }
 
 #cont blockquote small:before,
@@ -715,7 +696,7 @@ body.inverted {
 #cont blockquote.pull-right {
     padding-right: 15px;
     padding-left: 0;
-    border-right: 5px solid #eeeeee;
+    border-right: 5px solid var(--text-color);
     border-left: 0;
 }
 
@@ -756,9 +737,9 @@ body.inverted {
 #cont code {
     padding: 2px 4px;
     font-size: 90%;
-    color: #c7254e;
+    color: var(--text-color);
     white-space: nowrap;
-    background-color: #f9f2f4;
+    background-color: var(--faint-color);
     border-radius: 4px;
 }
 
@@ -771,11 +752,11 @@ body.inverted {
     margin: 0 0 9px;
     font-size: 0.90em;
     line-height: 1.428571429;
-    color: #333333;
+    color: var(--text-color);
     word-break: break-all;
     word-wrap: break-word;
-    background-color: #f5f5f5;
-    border: 1px solid #cccccc;
+    background-color: var(--faint-color);
+    border: 1px solid var(--faint-color);
     border-radius: 4px;
 }
 
@@ -801,9 +782,9 @@ body.inverted {
     margin-bottom: 18px;
     font-size: 19.5px;
     line-height: inherit;
-    color: #333333;
+    color: var(--text-color);
     border: 0;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid var(--faint-color);
 }
 
 #cont label {
@@ -859,7 +840,7 @@ body.inverted {
     padding-top: 9px;
     font-size: 13px;
     line-height: 1.428571429;
-    color: #333333;
+    color: var(--text-color);
     vertical-align: middle;
 }
 
@@ -886,8 +867,8 @@ h1#prev-header {
 }
 
 div.prev-item {
-    border-top: 2px #af2020 solid;
-    border-bottom: 2px #af2020 solid;
+    border-top: 2px var(--theme-color) solid;
+    border-bottom: 2px var(--theme-color) solid;
     margin-left: 2%;
     margin-top: 1%;
     padding-bottom: 3%;
@@ -910,7 +891,7 @@ div.prev-item:hover {
 }
 
 .prev-item-title:hover {
-    color: #baa3a3;
+    color: var(--faint-theme-color);
 }
 
 .prev-item-ahref {
@@ -929,5 +910,5 @@ div.prev-item:hover {
 }
 
 .prev-item-ahref:hover > a {
-    color: #baa3a3;
+    color: var(--faint-theme-color);
 }

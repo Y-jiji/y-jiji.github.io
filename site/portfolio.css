@@ -15,7 +15,7 @@
     margin-right: 10px;
     margin-top: 2px;
     margin-bottom: 2px;
-    border: 2px dashed #af2020;
+    border: 2px dashed var(--theme-color);
     background-color: inherit;
     text-align: center;
     text-decoration: none;
@@ -26,5 +26,5 @@
 
 #navi > div > button:hover {
     transform: scale(1.05);
-    box-shadow: 5px -5px #baa3a3;
+    box-shadow: 5px -5px var(--faint-theme-color);
 }
