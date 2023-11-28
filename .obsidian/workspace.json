@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "e8c2ccbaf856bb1a",
+        "id": "fa5cbe6b5098388d",
         "type": "tabs",
         "children": [
           {
-            "id": "97f02d15c7d0a2c6",
+            "id": "1accf68d42a38285",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "post/Recent-works-review.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -199,7 +195,7 @@
       "wikipedia-search:Open Article": false
     }
   },
-  "active": "97f02d15c7d0a2c6",
+  "active": "1accf68d42a38285",
   "lastOpenFiles": [
     "post/forward-forward.md",
     "post/Recent-works-review.md",
