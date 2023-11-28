@@ -82,11 +82,11 @@ This computation process suggests a fact: the instant we know $\vec h$ , we can 
 
 Illustration of latency in FF. 
 
-![Latency-FF](./assets/Latency-FF.jpg)
+![Latency-FF](../_assets/Latency-FF.jpg)
 
 Illustration of latency in BP. 
 
-![Latency-BP](./assets/Latency-BP.jpg)
+![Latency-BP](../_assets/Latency-BP.jpg)
 
 ## The Curse of Dimensionality
 
@@ -122,7 +122,7 @@ plt.show()
 
 We increase the portion of red when $n$ gets larger. Here is the plot: 
 
-![Deviation](./assets/Deviation.jpeg)
+![Deviation](../_assets/Deviation.jpeg)
 
 Since fixing the selection of $y$ doesn't affect this distribution, we suppose $y$ is the correct gradient direction. This trivial experiement above suggests that if we sample each perturbation direction from independent normal distributions, then most of the time in FF, we are stepping towards an almost wrong direction! 
 

@@ -27,7 +27,7 @@
     "downscalePercent": 100
   },
   "newFileLocation": "current",
-  "newLinkFormat": "absolute",
+  "newLinkFormat": "relative",
   "promptDelete": false,
   "showInlineTitle": true,
   "smartIndentList": false,

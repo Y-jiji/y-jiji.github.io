@@ -1,16 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "forward-forward",
+      "path": "post/forward-forward.md"
+    },
+    {
+      "basename": "blog-from-scratch",
+      "path": "post/blog-from-scratch.md"
+    },
+    {
       "basename": "rpc-server",
       "path": "post/rpc-server.md"
     },
     {
       "basename": "Recent-works-review",
       "path": "post/Recent-works-review.md"
-    },
-    {
-      "basename": "forward-forward",
-      "path": "post/forward-forward.md"
     },
     {
       "basename": "basic-blog-template",
@@ -195,10 +199,6 @@
     {
       "basename": "2023-11-20",
       "path": "3-杂项/3-日记/2023-11-20.md"
-    },
-    {
-      "basename": "Theorem -- Determinant Lemma",
-      "path": "2-仓库/1-数学/Theorem -- Determinant Lemma.md"
     }
   ],
   "omittedPaths": [],
