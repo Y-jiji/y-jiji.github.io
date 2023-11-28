@@ -1,0 +1,7 @@
+{
+  "CHROME_PATH": "",
+  "ThemePath": "3-杂项/1-演示/marp-themes",
+  "EnableHTML": true,
+  "MathTypesettings": "mathjax",
+  "HTMLExportMode": "bare"
+}

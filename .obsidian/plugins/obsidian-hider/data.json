@@ -1,0 +1,15 @@
+{
+  "hideRibbon": true,
+  "hideStatus": true,
+  "hideTabs": true,
+  "hideScroll": false,
+  "hideSidebarButtons": true,
+  "hideTooltips": false,
+  "hideFileNavButtons": true,
+  "hideSearchSuggestions": false,
+  "hideSearchCounts": false,
+  "hideInstructions": false,
+  "hideMeta": false,
+  "hideVault": true,
+  "frameless": false
+}

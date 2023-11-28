@@ -1,0 +1,21 @@
+{
+  "language": "en",
+  "searchLimit": 10,
+  "thumbnailWidth": null,
+  "defaultNotePath": "/",
+  "templates": [
+    {
+      "name": "Default",
+      "templateString": "[{title}]({url})",
+      "createNote": false,
+      "customPath": ""
+    }
+  ],
+  "placeCursorInfrontOfInsert": false,
+  "autoInsertSingleResponseQueries": false,
+  "prioritizeArticleTitle": false,
+  "cleanupIntros": true,
+  "openArticleInFullscreen": false,
+  "openArticlesInBrowser": false,
+  "showedSurfingMessage": false
+}

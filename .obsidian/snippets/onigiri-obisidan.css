@@ -1,0 +1,178 @@
+/* hide away the frames */
+body {
+    padding-top: 0 !important;
+}
+
+.titlebar {
+    display: none;
+}
+
+.workspace-tabs {
+    padding: 0 !important;
+}
+
+/* .workspace-tab-header-container {display: none;} */
+.workspace-ribbon {
+    display: none;
+}
+
+.status-bar {
+    display: none;
+}
+
+/* hide all scroll bars */
+body:not(.native-scrollbars) ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+/* light theme color (lighter) */
+.theme-light {
+    --color-base-00: #ffffff;
+    --color-base-05: #ffffff;
+    --color-base-10: #ffffff;
+    --color-base-20: #ffffff;
+    --code-background: rgb(239, 239, 239);
+}
+
+/* dark theme color (dimmed) */
+.theme-dark {
+    --color-base-00: #202020;
+    --color-base-05: #202020;
+    --color-base-10: #202020;
+    --color-base-20: #202020;
+    --color-base-25: #202020;
+    --color-base-30: #202020;
+}
+
+/* editor sizing and padding */
+.markdown-reading-view,
+.markdown-source-view {
+    padding-left: max(calc(40% - 25vw), 0vw) !important;
+    padding-right: max(calc(40% - 25vw), 0vw) !important;
+}
+
+.cm-editor > .cm-scroller > .cm-sizer {
+    padding-bottom: 50vh !important;
+}
+
+[role="textbox"] {
+    padding: 0 !important;
+}
+
+/* title */
+body {
+    --h1-size: 3em;
+    --h2-size: 2em;
+    --h3-size: 1.57em;
+    --h4-size: 1.55em;
+    --h5-size: 1.32em;
+    --h6-size: 1.22em;
+    --h1-line-height: 2.2em;
+    --h2-line-height: 1.8em;
+    --h3-line-height: 1.57em;
+    --h4-line-height: 1.55rem;
+}
+
+.inline-title,
+.HyperMD-header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    font-weight: 400 !important;
+}
+
+/* image */
+.block-language-dot {
+    text-align: center;
+}
+
+/* text line and list */
+body {
+    --line-height-normal: 2.8em;
+}
+
+div.cm-line {
+    font-weight: 400 !important;
+}
+
+p {
+    padding-top: 0 !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+}
+
+div.image-embed {
+    text-align: center !important;
+}
+
+div.HyperMD-codeblock, code, pre {
+    line-height: 1.5em !important;
+    display: block;
+}
+
+ul,
+ol {
+    padding-left: 30px !important;
+    margin: 0 !important;
+}
+
+/* hash label */
+.cm-blockid {
+    line-height: 1.5em !important;
+}
+
+/* hidden break lines */
+div.is-live-preview div.HyperMD-codeblock-begin-bg:not(div.cm-active)>span.cm-formatting {
+    display: contents;
+}
+
+div.is-live-preview div.HyperMD-codeblock-end-bg:not(div.cm-active)>span.cm-formatting {
+    display: contents;
+}
+
+div.is-live-preview div.cm-line:has(+ div.cm-table-widget):not(div.cm-active)>br {
+    /* before table */
+    display: none !important;
+}
+
+div.is-live-preview div.cm-table-widget+div.cm-line:not(div.cm-active)>br {
+    /* after table */
+    display: none !important;
+}
+
+div.is-live-preview div.HyperMD-list-line+div.cm-line:not(div.cm-active)>br {
+    /* after list */
+    display: none;
+}
+
+div.is-live-preview div.HyperMD-quote+div.cm-line:not(div.cm-active)>br {
+    /* after quote block */
+    display: none;
+}
+
+/* remove the strike-through in checkboxes */
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:not([data-task=" "]) {
+    text-decoration: none;
+    color: var(--text-normal);
+}
+ul > li.task-list-item.is-checked {
+    text-decoration:none;
+    color:var(--text-normal);
+}
+ol > li.task-list-item.is-checked {
+    text-decoration:none;
+    color:var(--text-normal);
+}
+
+/* disable font ligatures */
+:root {
+    font-variant-ligatures: none;
+}

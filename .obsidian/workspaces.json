@@ -1,0 +1,224 @@
+{
+  "workspaces": {
+    "Adler Book": {
+      "main": {
+        "id": "5839d1894b863ee1",
+        "type": "split",
+        "children": [
+          {
+            "id": "b1ec9e53cab0fd64",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "206fe082983225c6",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "2-仓库/5-心理/! Material/PSY-The-Courage-to-be-Disliked.pdf"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "d39c33cf74f866cb",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ed175905c804ff92",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "2-仓库/4-英语/Anki 00.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "81e4f3b30f3b2c4e",
+        "type": "split",
+        "children": [
+          {
+            "id": "6bcc06549b7d0f22",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "dbbce80780e73c0c",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "bb3fffbdc482e729",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "tag:NeuralNetwork",
+                    "matchingCase": true,
+                    "explainSearch": true,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "0bdf913b840dfcbe",
+                "type": "leaf",
+                "state": {
+                  "type": "all-properties",
+                  "state": {
+                    "sortOrder": "frequency"
+                  }
+                }
+              },
+              {
+                "id": "d3620b8817be1325",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "2-仓库/5-心理/! Material/PSY-The-Courage-to-be-Disliked.pdf",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "3652b02efa09438d",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "2-仓库/5-心理/! Material/PSY-The-Courage-to-be-Disliked.pdf",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  }
+                }
+              },
+              {
+                "id": "81fa10a945f25df9",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              }
+            ],
+            "currentTab": 5
+          }
+        ],
+        "direction": "horizontal",
+        "width": 341.09999990463257,
+        "collapsed": true
+      },
+      "right": {
+        "id": "0b50c83e6cafecf4",
+        "type": "split",
+        "children": [
+          {
+            "id": "8f03cd7d4fd732cd",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "2021fb4b15e2d74c",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "b7964297218e8d6d",
+                "type": "leaf",
+                "state": {
+                  "type": "reminder-list",
+                  "state": {}
+                }
+              },
+              {
+                "id": "00f9098cd48e9cdb",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "2-仓库/5-心理/! Material/PSY-The-Courage-to-be-Disliked.pdf"
+                  }
+                }
+              },
+              {
+                "id": "2788a82e2e4e64cc",
+                "type": "leaf",
+                "state": {
+                  "type": "dictionary-view",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 3
+          },
+          {
+            "id": "ed9b8536ab72ab6c",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "2467323512331d6e",
+                "type": "leaf",
+                "state": {
+                  "type": "recent-files",
+                  "state": {}
+                }
+              },
+              {
+                "id": "247252989ab38b23",
+                "type": "leaf",
+                "state": {
+                  "type": "git-view",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 338.5
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "canvas:Create new canvas": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "daily-notes:Open today's daily note": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false,
+          "omnisearch:Omnisearch": false,
+          "marp-slides:Show Slide Preview": false,
+          "homepage:Open homepage": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "206fe082983225c6"
+    }
+  },
+  "active": "Adler Book"
+}
