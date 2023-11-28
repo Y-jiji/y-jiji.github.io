@@ -1,22 +1,18 @@
 {
   "main": {
-    "id": "4bc68b80583bb1d2",
+    "id": "5839d1894b863ee1",
     "type": "split",
     "children": [
       {
-        "id": "34e90484ef163e03",
+        "id": "e8c2ccbaf856bb1a",
         "type": "tabs",
         "children": [
           {
-            "id": "946752cf3cf8e424",
+            "id": "97f02d15c7d0a2c6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "post/forward-forward.md",
-                "mode": "source",
-                "source": true
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -25,32 +21,33 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "628f56eaa4098456",
+    "id": "81e4f3b30f3b2c4e",
     "type": "split",
     "children": [
       {
-        "id": "7b093299b2b88ba7",
+        "id": "6bcc06549b7d0f22",
         "type": "tabs",
         "children": [
           {
-            "id": "5807dbec8f12abc3",
+            "id": "dbbce80780e73c0c",
             "type": "leaf",
             "state": {
-              "type": "file-explorer",
+              "type": "tag",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "useHierarchy": true
               }
             }
           },
           {
-            "id": "5f4d9b0f2f6bb6c1",
+            "id": "bb3fffbdc482e729",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
+                "query": "tag:NeuralNetwork",
+                "matchingCase": true,
+                "explainSearch": true,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
@@ -58,35 +55,22 @@
             }
           },
           {
-            "id": "cb282227ed97a4ab",
+            "id": "0bdf913b840dfcbe",
             "type": "leaf",
             "state": {
-              "type": "bookmarks",
-              "state": {}
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
             }
-          }
-        ]
-      }
-    ],
-    "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
-  },
-  "right": {
-    "id": "7c430065e8a3c74b",
-    "type": "split",
-    "children": [
-      {
-        "id": "b1861490cf42eaaf",
-        "type": "tabs",
-        "children": [
+          },
           {
-            "id": "247747948968efbb",
+            "id": "d3620b8817be1325",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "post/forward-forward.md",
+                "file": "post/Recent-works-review.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,55 +82,167 @@
             }
           },
           {
-            "id": "440b3221d250f870",
+            "id": "3652b02efa09438d",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "post/forward-forward.md",
+                "file": "post/Recent-works-review.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "bfbbe6870012e905",
+            "id": "9ef07fc6d934e4ad",
             "type": "leaf",
             "state": {
-              "type": "tag",
+              "type": "file-explorer",
               "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
+                "sortOrder": "alphabetical"
               }
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 341.09999990463257,
+    "collapsed": true
+  },
+  "right": {
+    "id": "0b50c83e6cafecf4",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f03cd7d4fd732cd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2021fb4b15e2d74c",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
             }
           },
           {
-            "id": "b97a6c53fa4ff5e4",
+            "id": "b7964297218e8d6d",
+            "type": "leaf",
+            "state": {
+              "type": "reminder-list",
+              "state": {}
+            }
+          },
+          {
+            "id": "00f9098cd48e9cdb",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "post/forward-forward.md"
+                "file": "post/Recent-works-review.md"
               }
+            }
+          },
+          {
+            "id": "2788a82e2e4e64cc",
+            "type": "leaf",
+            "state": {
+              "type": "dictionary-view",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "ed9b8536ab72ab6c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2467323512331d6e",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          },
+          {
+            "id": "247252989ab38b23",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 338.5,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
       "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "daily-notes:Open today's daily note": false,
+      "workspaces:Manage workspace layouts": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "omnisearch:Omnisearch": false,
+      "marp-slides:Show Slide Preview": false,
+      "homepage:Open homepage": false,
+      "wikipedia-search:Open Article": false
     }
   },
-  "active": "946752cf3cf8e424",
-  "lastOpenFiles": []
+  "active": "97f02d15c7d0a2c6",
+  "lastOpenFiles": [
+    "template/basic-blog-template.md",
+    "post/forward-forward.md",
+    "post/记录上周的一个IDEA.md",
+    "info/index-tags.json",
+    "blog-scan/target/debug/incremental/blog_scan-3k1zjak7gloeh/s-gr0o7z7dlb-q1mdor-6ezde3kjl88j2fmwnpch4v9qd/work-products.bin",
+    "blog-scan/target/debug/incremental/blog_scan-3k1zjak7gloeh/s-gr0o7z7dlb-q1mdor-6ezde3kjl88j2fmwnpch4v9qd/query-cache.bin",
+    "blog-scan/target/debug/incremental/blog_scan-3k1zjak7gloeh/s-gr0o7z7dlb-q1mdor-6ezde3kjl88j2fmwnpch4v9qd/dep-graph.bin",
+    "blog-scan/target/debug/incremental/blog_scan-3k1zjak7gloeh/s-gr0o7z7dlb-q1mdor-6ezde3kjl88j2fmwnpch4v9qd",
+    "blog-scan/target/debug/incremental/blog_scan-1hp815rpfx7y3/s-gr0o7z7dk6-1i1nclf-datip55vehue91j0g1mju62eb/work-products.bin",
+    "blog-scan/target/debug/incremental/blog_scan-1hp815rpfx7y3/s-gr0o7z7dk6-1i1nclf-datip55vehue91j0g1mju62eb/query-cache.bin",
+    "blog-scan/target/debug/incremental/blog_scan-1hp815rpfx7y3/s-gr0o7z7dk6-1i1nclf-datip55vehue91j0g1mju62eb/dep-graph.bin",
+    "blog-scan/target/debug/incremental/blog_scan-1hp815rpfx7y3/s-gr0o7z7dk6-1i1nclf-datip55vehue91j0g1mju62eb",
+    "blog-scan/target/debug/deps/libblog_scan-8fc084389a49defb.rmeta",
+    "post/rpc-server.md",
+    "3-杂项/4-主页/Home.md",
+    "2-仓库/4-英语/Anki 00.md",
+    "3-杂项/5-申请/SOP -- Essential Materials.md",
+    "2-仓库/3-工程/Perf -- RocksDB in Facebook.md",
+    "3-杂项/3-日记/2023-11-28.md",
+    "3-杂项/3-日记/2023-11-29.md",
+    "3-杂项/3-日记/2023-11-15.md",
+    "3-杂项/3-日记/2023-12-05.md",
+    "3-杂项/2-账号/账号列表.md",
+    "3-杂项/3-日记/2023-11-27.md",
+    "2-仓库/2-算法/TT -- Cubical Type Theory.md",
+    "2-仓库/1-数学/! Track.md",
+    "2-仓库/1-数学/Structure -- Affine Varieties.md",
+    "2-仓库/1-数学/Structure -- Group.md",
+    "3-杂项/5-申请/Reference Letter Draft(s).md",
+    "3-杂项/2-账号/书和论文.md",
+    "2-仓库/1-数学/Untitled Diagram.svg",
+    "3-杂项/3-日记/2023-11-26.md",
+    "3-杂项/3-日记/2023-11-25.md",
+    "3-杂项/3-日记/2023-11-24.md",
+    "3-杂项/2-账号/编程社区.md",
+    "3-杂项/2-账号/邮箱，社交媒体，SSO.md",
+    "1-项目/2-工具/Patpat.md",
+    "1-项目/1-科研/2023年/Strict-Determinism.svg",
+    "1-项目/1-科研/2023年/Strict-Determinism-2.svg",
+    "_assets/pic-2023/Memory-Hierarchy-in-CUDA.png",
+    "_assets/pic-2023/LinAJBR-Lowering.png",
+    "_assets/function-call.png",
+    "1-项目/1-科研/_assets/Pasted image 20231005161755.png",
+    "3-杂项/模板/_assets/pisum.jpg",
+    "3-发布/博客/site/mathjax/unpacked/jax/output/HTML-CSS/blank.gif",
+    "3-发布/博客/site/mathjax/fonts/HTML-CSS/TeX/svg/MathJax_WinChrome-Regular.svg"
+  ]
 }
