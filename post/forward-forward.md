@@ -8,7 +8,7 @@ title: "Understanding Forward-Forward"
 
 # Understanding Forward-Forward (FF)
 
-#2023-05-05 #WIP
+#2023-05-05 
 
 ## Introduction
 
