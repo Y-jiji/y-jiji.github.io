@@ -11,8 +11,12 @@
             "id": "1accf68d42a38285",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "post/rpc-server.md",
+                "mode": "source",
+                "source": true
+              }
             }
           }
         ]
@@ -70,7 +74,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "post/Recent-works-review.md",
+                "file": "post/rpc-server.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,7 +91,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "post/Recent-works-review.md",
+                "file": "post/rpc-server.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -108,7 +112,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.09999990463257
+    "width": 341.09999990463257,
+    "collapsed": true
   },
   "right": {
     "id": "0b50c83e6cafecf4",
@@ -140,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "post/Recent-works-review.md"
+                "file": "post/rpc-server.md"
               }
             }
           },

@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "rpc-server",
+      "path": "post/rpc-server.md"
+    },
+    {
       "basename": "Recent-works-review",
       "path": "post/Recent-works-review.md"
     },
@@ -15,10 +19,6 @@
     {
       "basename": "记录上周的一个IDEA",
       "path": "post/记录上周的一个IDEA.md"
-    },
-    {
-      "basename": "rpc-server",
-      "path": "post/rpc-server.md"
     },
     {
       "basename": "Home",
