@@ -11,8 +11,12 @@
             "id": "97f02d15c7d0a2c6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "post/Recent-works-review.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -108,8 +112,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.09999990463257,
-    "collapsed": true
+    "width": 341.09999990463257
   },
   "right": {
     "id": "0b50c83e6cafecf4",
@@ -198,8 +201,9 @@
   },
   "active": "97f02d15c7d0a2c6",
   "lastOpenFiles": [
-    "template/basic-blog-template.md",
     "post/forward-forward.md",
+    "post/Recent-works-review.md",
+    "template/basic-blog-template.md",
     "post/记录上周的一个IDEA.md",
     "info/index-tags.json",
     "blog-scan/target/debug/incremental/blog_scan-3k1zjak7gloeh/s-gr0o7z7dlb-q1mdor-6ezde3kjl88j2fmwnpch4v9qd/work-products.bin",
@@ -234,7 +238,6 @@
     "3-杂项/3-日记/2023-11-24.md",
     "3-杂项/2-账号/编程社区.md",
     "3-杂项/2-账号/邮箱，社交媒体，SSO.md",
-    "1-项目/2-工具/Patpat.md",
     "1-项目/1-科研/2023年/Strict-Determinism.svg",
     "1-项目/1-科研/2023年/Strict-Determinism-2.svg",
     "_assets/pic-2023/Memory-Hierarchy-in-CUDA.png",
