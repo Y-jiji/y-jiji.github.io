@@ -46,7 +46,7 @@ Tenspr is a project trying to automatically search suitable sparse tensor format
 
 I'm working with [Egor Larionov](https://github.com/elrnv) from Meta Reality Labs on this as a side project. 
 
-Currently, I'm working on designing and implementing an intermediate representation for describing sparse tensor formats and modeling the cost dynamics. 
+Currently, I'm working on designing and implementing an intermediate representation for describing sparse tensor formats and modeling as well as verifying the cost dynamics. 
 
 This work is inspired by [TACO](https://github.com/tensor-compiler/taco), [Apache TVM,](https://github.com/apache/tvm) and [TC-GNN](https://github.com/YukeWang96/TC-GNN_ATC23). 
 
@@ -60,7 +60,7 @@ Tenspr = {Hardware-Aware TACO} = {Sparse-Version-Of TVM} = {Automated TC-GNN}
 
 ApproxFormer is a kind of new masked attention that trains like a Transformer and infers like RNN. 
 
-The basic idea is to decompose the diagonal matrix $M$ to $A$ and $B$ so that we can add masks to linear transformers. 
+The basic idea is to decompose the diagonal matrix $M$ some $A$ and $B$ so that we can add masks to linear transformers. 
 $$
 ((\phi(Q)\times \phi(K^T))\odot M)\times V \approx (\phi(Q)\odot A)\times(\phi(K^T)\odot B)\times V
 $$
@@ -71,4 +71,3 @@ It can be seen as a numerical version of TC-GNN by compressing the mask matrix $
 It can also be seen as a successor of RWKV, using a different approach to achieve the inference-time RNN performance. 
 
 [Repository](https://github.com/Y-jiji/approxformer)
-

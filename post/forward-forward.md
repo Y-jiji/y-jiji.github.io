@@ -92,7 +92,7 @@ Illustration of latency in BP.
 
 Although FF method as computationally efficient, FF method is not good in terms of convergence. It suffers from large variance when we have many parameters. 
 
-Intuitively, when sampling two vectors $x,y$ in $\R^n$ space from standard normal distribution ${\cal N}(0,I_n)$ independently, we know that the distribution of $x^Ty/(\|x\|_2\cdot \|y\|_2)$ inclines to zero when $n$ increase, which means we tend to deviate from the correct gradient direction when dimension is large. 
+Intuitively, when sampling two vectors $x,y$ in $\mathbb{R}^n$ space from standard normal distribution ${\cal N}(0,I_n)$ independently, we know that the distribution of $x^Ty/(\|x\|_2\cdot \|y\|_2)$ inclines to zero when $n$ increase, which means we tend to deviate from the correct gradient direction when dimension is large. 
 
 Let ${\cal D}(n)$ denote the distribution of $x^Ty/(\|x\|_2\cdot \|y\|_2)$ where $x$ and $y$ are from ${\cal N}(0,I_n)$. (actually $\mathcal{D}(n)$ is equivalent to the distribution of $(0,0\cdots,1)x/\|x\|_2$ , because $x$ is independent from $y$ , we will use this fact later). 
 
@@ -134,13 +134,6 @@ Here is the idea of the ICLR23 paper: we can use **local objective functions** i
 
 The question is how to select local objective functions. In this paper, they add a data augmentation module called local mixer to each layer. The local objective of the following layer suggests the layer should not be active when the input is produced by a local mixer and should be active when the input is produced by the previous layer. 
 
-## Another Important Idea
-
-Another important idea of this paper is to use activity perturbation instead of weight perturbation. 
-
-In linear layers, we add 
-
 ## Implementation
 
-## Future Topics
-
+For implementations, see https://github.com/mpezeshki/pytorch_forward_forward. 
