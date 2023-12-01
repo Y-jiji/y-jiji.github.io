@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "87b4f161c391dca4",
+        "id": "9d2eec6bae4f0bcc",
         "type": "tabs",
         "children": [
           {
-            "id": "36ff27fbd171c6f5",
+            "id": "3a54c8dfa2396a74",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -112,8 +112,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.09999990463257,
-    "collapsed": true
+    "width": 341.09999990463257
   },
   "right": {
     "id": "0b50c83e6cafecf4",
@@ -200,7 +199,7 @@
       "wikipedia-search:Open Article": false
     }
   },
-  "active": "36ff27fbd171c6f5",
+  "active": "3a54c8dfa2396a74",
   "lastOpenFiles": [
     "post/rpc-server.md",
     "post/rust-vs-cpp.md",
