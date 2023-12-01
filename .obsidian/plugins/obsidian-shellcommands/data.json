@@ -59,7 +59,7 @@
     {
       "id": "2ty4rqg8no",
       "platform_specific_commands": {
-        "default": "cd blog-scan; RUST_BACKTRACE=1 cargo run -- -D \"..\"; cd ..; git add .; git commit -m {{date:YYYY_MM_DD+T_hh_mm}}; git push"
+        "default": "RUST_BACKTRACE=1 cd blog-scan && cargo run -- -D \"..\" && cd .. && git add . && git commit -m {{date:YYYY_MM_DD+T_hh_mm}} && git push"
       },
       "shells": {},
       "alias": "Scan",
