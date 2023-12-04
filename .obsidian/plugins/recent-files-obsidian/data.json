@@ -1,6 +1,26 @@
 {
   "recentFiles": [
     {
+      "basename": "is-hbase",
+      "path": "post/is-hbase.md"
+    },
+    {
+      "basename": "记录上周的一个IDEA",
+      "path": "post/记录上周的一个IDEA.md"
+    },
+    {
+      "basename": "Distribute-2",
+      "path": "post/Distribute-2.svg"
+    },
+    {
+      "basename": "Distribute-1",
+      "path": "post/Distribute-1.svg"
+    },
+    {
+      "basename": "tiny-lsm",
+      "path": "post/tiny-lsm.md"
+    },
+    {
       "basename": "rust-vs-cpp",
       "path": "post/rust-vs-cpp.md"
     },
@@ -23,10 +43,6 @@
     {
       "basename": "basic-blog-template",
       "path": "template/basic-blog-template.md"
-    },
-    {
-      "basename": "记录上周的一个IDEA",
-      "path": "post/记录上周的一个IDEA.md"
     },
     {
       "basename": "Home",
@@ -183,22 +199,6 @@
     {
       "basename": "Strict-Determinism",
       "path": "1-项目/1-科研/2023年/Strict-Determinism.svg"
-    },
-    {
-      "basename": "NSG-NSGZero",
-      "path": "1-项目/1-科研/_assets/NSG-NSGZero.pdf"
-    },
-    {
-      "basename": "Strict-Determinism-2",
-      "path": "1-项目/1-科研/2023年/Strict-Determinism-2.svg"
-    },
-    {
-      "basename": "2023-11-22",
-      "path": "3-杂项/3-日记/2023-11-22.md"
-    },
-    {
-      "basename": "2023-11-21",
-      "path": "3-杂项/3-日记/2023-11-21.md"
     }
   ],
   "omittedPaths": [],
