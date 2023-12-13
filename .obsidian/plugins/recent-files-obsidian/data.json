@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "comparator-automata",
+      "path": "post/comparator-automata.md"
+    },
+    {
+      "basename": "Untitled Diagram",
+      "path": "post/Untitled Diagram.svg"
+    },
+    {
       "basename": "is-hbase",
       "path": "post/is-hbase.md"
     },
@@ -187,18 +195,6 @@
     {
       "basename": "2023-11-23",
       "path": "3-杂项/3-日记/2023-11-23.md"
-    },
-    {
-      "basename": "Active -- Ethereum Security Game",
-      "path": "1-项目/1-科研/2023年/Active -- Ethereum Security Game.md"
-    },
-    {
-      "basename": "Active -- Spectrum",
-      "path": "1-项目/1-科研/2023年/Active -- Spectrum.md"
-    },
-    {
-      "basename": "Strict-Determinism",
-      "path": "1-项目/1-科研/2023年/Strict-Determinism.svg"
     }
   ],
   "omittedPaths": [],

@@ -37,8 +37,9 @@ description: modified some fonts, and unordered and ordered list support
 
 body {
     margin: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: Calibri, sans-serif;
+    font-size: 15px;
+    line-height: 30px;
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -107,8 +108,8 @@ body {
 }
 
 #cont {
-    margin-left: max(10px, 10vw);
-    margin-right: max(10px, 10vw);
+    margin-left: max(10px, 15vw);
+    margin-right: max(10px, 15vw);
     padding-bottom: 50vh;
     padding-top: 10vh;
 }

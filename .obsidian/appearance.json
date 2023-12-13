@@ -1,14 +1,14 @@
 {
   "baseFontSize": 16,
   "translucency": false,
-  "theme": "moonstone",
+  "theme": "obsidian",
   "enabledCssSnippets": [
     "obsidian",
     "width"
   ],
   "cssTheme": "",
   "baseFontSizeAction": false,
-  "accentColor": "#8f0000",
+  "accentColor": "#007575",
   "showViewHeader": true,
   "interfaceFontFamily": "Josefin Sans,OPPOSans",
   "textFontFamily": "",
