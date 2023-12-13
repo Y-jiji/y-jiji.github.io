@@ -63,7 +63,7 @@ We define the weight by $\frak a$ , computed from $f$ , $\gamma$ and execution t
 
 ## Comparator Automaton
 
-Comparator automaton is a composed from or weighted automaton. 
+Comparator automaton is composed of two weighted automata. 
 
 Using the product of two weighted automata, we find naturally we can define an automaton such that it accepts compositional inputs $w_{\frak A}, w_{\frak B}$ iff ${\frak a}_{\frak A}(w_{\frak A})\le {\frak a}_{\frak B}(w_{\frak B})$ 
 
@@ -71,4 +71,6 @@ However, while the definition is very clear here, the problem remains in how to 
 
 ## Quantitive inclusion
 
-Given the definition of quantitive inclusion, now we try to construct a comparator automaton for quantitive inclusion problem. The problem is how to transform the $\forall w:\cdots$ into a final-check fashion in comparator automaton. 
+Quantitive inclusion for weighted two automata $\frak A$ and $\frak B$ with same aggregate function $f$ is written as ${\frak A} \subset_f {\frak B}$ and defined as $\forall w: {\frak a}_{\frak A}(w) \le {\frak a}_{\frak B}(w)$ . 
+
+Given the definition of quantitive inclusion, now we try to construct a comparator automaton for quantitive inclusion problem. The problem is how to transform the $\forall w:\cdots$ into a final-check fashion in comparator automaton and will be the main problem for the second part. 

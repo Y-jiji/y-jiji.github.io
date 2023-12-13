@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "01cb1c845abee5e7",
+        "id": "af4955e4307250cf",
         "type": "tabs",
         "children": [
           {
-            "id": "f26f6da4baac5ef7",
+            "id": "6b78d56e13eba244",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -200,7 +200,7 @@
       "wikipedia-search:Open Article": false
     }
   },
-  "active": "f26f6da4baac5ef7",
+  "active": "6b78d56e13eba244",
   "lastOpenFiles": [
     "post/comparator-automata.md",
     "post/comparator-automata.md~",
