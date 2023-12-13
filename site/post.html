@@ -3,9 +3,10 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="post.css">
-    <script src="marked.js"></script>    <!-- load markdown parser -->
     <script src="js-yaml.js"></script>
     <script src="yamlFront.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it-mathjax@2.0.0/markdown-it-mathjax.min.js"></script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           extensions: ["tex2jax.js"],
@@ -39,7 +40,7 @@
     <script src="config.js"></script>        <!-- load global config   -->
     <script src="navigation.js"></script>    <!-- load navigation bar  -->
     <!-- script for navigation bar animation -->
-    <script>
+    <script type="module">
         // a scrolling var
         var scrollingLock = false;
         var lastScrollTop = 0;
@@ -87,7 +88,7 @@
         });
     </script>
     <!-- script for loading blog posts from source -->
-    <script>
+    <script type="module">
         let parameter = new URLSearchParams(window.location.search);
         // parse and render markdown content
         let file = new String(parameter.get("file")).split(/^\//, 1)[0].split(/\.md$/, 1)[0] + ".md";
@@ -96,25 +97,34 @@
         .then(async (value) => await value.text())
         .then(text => {
             let new_text = text.replaceAll("\\\\", "\\\\\\\\");
-            console.log(new_text);
             return new_text;
         })
         .then(text => {
-            while (!window.marked) { console.log("module marked is not loaded. ") }
-            let oldLexerLex = marked.Lexer.lex;
-            marked.Lexer.lex = function (text, options) {
-                let parsed = yamlFront.loadFront(text)
-                let cKey = '__content'
-                return oldLexerLex(parsed[cKey], options)
-            }
-            document.getElementById("cont").innerHTML = marked.parse(text);
-            return true; })
+            const starEscape = "\\Qva8WoTbfoyR2EIBW3RepMSImhHVO6aDVJUgzguM4VBChaIxnRYJKEZRCj55vJdunFksCLvgr1n5Fr4Xo80ZBPzWlSwRf8fZvrD3Mr9TH89Z6Ks9J6vLyi9S80uwGZHdfeuVJ1CaUULsOHBC4Yn0z4HiKPQPVx7NTqMdbHENpLMekF3ABW877AHGfNns5pA6OukoCoK2";
+            const underscoreEscape = "\\ZUpO9HdAFCIFczYqAi3ihSBBnp536t0xKaTILBFNHVQiy0khsnjkNSBiplRPEZlbuh3YwJgGJRcjFA5uCTjUBopbQJMtuifA50FynqAFy9n00Z7iKwidDRoMbFKbFwK8CrXZguZ5oDjcwqCBTKuCMm1uXVYfjarsdnvQhDmN8HTYQUmeHI50Zg7Zu4UzwSH2DPI1jCUb";
+            const md = markdownit('default');
+            text = text.split('---', 3)[2];
+            text = text.split('$$').map((x) => {
+                let y = x.split('$');
+                for (let i = 0; i < y.length; ++i) {
+                    if (i % 2 == 0) { continue; }
+                    y[i] = y[i].replaceAll('_', underscoreEscape);
+                    y[i] = y[i].replaceAll('*', starEscape);
+                }
+                return y.join('$');
+            }).join('$$');
+            text = md.render(text);
+            text = text.replaceAll(underscoreEscape, '_');
+            text = text.replaceAll(starEscape, '*');
+            document.getElementById("cont").innerHTML = text;
+            return true;
+        })
         .then(_any => {
             // chaining mathjax rendering
             let body = document.getElementsByTagName("body")[0];
             let script = document.createElement("script");
             script.setAttribute("type", "text/javascript");
-            script.setAttribute("src", site + "mathjax/MathJax.js");
+            script.setAttribute("src", "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML");
             body.appendChild(script);
         })
         .then(_any => {

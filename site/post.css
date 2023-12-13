@@ -110,7 +110,7 @@ body {
 #cont {
     margin-left: max(10px, 15vw);
     margin-right: max(10px, 15vw);
-    padding-bottom: 50vh;
+    padding-bottom: 10vh;
     padding-top: 10vh;
 }
 
