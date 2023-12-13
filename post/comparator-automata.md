@@ -27,7 +27,7 @@ $$
 
 Therefore, we can state that the system is valid if $S \subset P$ , which means we cannot construct invalid paths from $S$ . 
 
-Excitingly, in this paper, there is another formulation that unleashes more possibilities! We can consider an aggregate function ${\frak a}_{S}$ and a weight function ${\frak a}_{P}$ s.t. for a path $p$ , ${\frak a}_{S}(p)=\mathbb{1}_{p\in S}$ and ${\frak a}_{P}(p)=\mathbb{1}_{p\in P}$ . Determine $S\subset P$ means $\forall p\in V^{*}\diagdown \{\varepsilon\}: {\frak a}_{S}(p) \subset {\frak a}_{P}(p)$ , where $V^{*}$ is the Kleene star construction. (At least this is not known to me when I was reading this paper. ) Another construction introduced in this paper is comparator automaton. Without loss of generality, a comparator automaton is co-related to an aggregate function $\frak a$ . It take$s a pair of words(paths) $a$ and $b$ as input, and accepts them iff ${\frak a}(a)\le {\frak a}(b)$ . 
+Excitingly, in this paper, there is another formulation that unleashes more possibilities! We can consider an aggregate function ${\frak a}_{S}$ and a weight function ${\frak a}_{P}$ s.t. for a path $p$ , ${\frak a}_{S}(p)=\mathbb{1}_{p\in S}$ and ${\frak a}_{P}(p)=\mathbb{1}_{p\in P}$ . Determine $S\subset P$ means $\forall p\in V^{*}\diagdown \{\varepsilon\}: {\frak a}_{S}(p) \subset {\frak a}_{P}(p)$ , where $V^{*}$ is the Kleene star construction. (At least this is not known to me when I was reading this paper. ) Another construction introduced in this paper is comparator automaton. Without loss of generality, a comparator automaton is co-related to an aggregate function $\frak a$ . It take's a pair of words(paths) $a$ and $b$ as input, and accepts them iff ${\frak a}(a)\le {\frak a}(b)$ . 
 
 ## Buchi automaton
 

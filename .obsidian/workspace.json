@@ -4,18 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "ff9674fd5a789d14",
+        "id": "01cb1c845abee5e7",
         "type": "tabs",
         "children": [
           {
-            "id": "b2f19129ccedca2f",
+            "id": "f26f6da4baac5ef7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "post/comparator-automata.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             }
           }
@@ -200,11 +200,11 @@
       "wikipedia-search:Open Article": false
     }
   },
-  "active": "b2f19129ccedca2f",
+  "active": "f26f6da4baac5ef7",
   "lastOpenFiles": [
+    "post/comparator-automata.md",
     "post/comparator-automata.md~",
     "post/forward-forward.md",
-    "post/comparator-automata.md",
     "blog-scan/target/debug/incremental/blog_scan-t3khvcynjf6l/s-grh82ifjhh-1mdyoqz-adqx47yh4q5fgcp31n42ylz5h/z7y6p27wjc74nj6.o",
     "blog-scan/target/debug/incremental/blog_scan-t3khvcynjf6l/s-grh82ifjhh-1mdyoqz-adqx47yh4q5fgcp31n42ylz5h/x1subb0ng2m7fgu.o",
     "blog-scan/target/debug/incremental/blog_scan-t3khvcynjf6l/s-grh82ifjhh-1mdyoqz-adqx47yh4q5fgcp31n42ylz5h/work-products.bin",
@@ -214,7 +214,6 @@
     "blog-scan/target/debug/incremental/blog_scan-t3khvcynjf6l/s-grh82ifjhh-1mdyoqz-adqx47yh4q5fgcp31n42ylz5h/rwnq3p8rx59fhu8.o",
     "blog-scan/target/debug/incremental/blog_scan-t3khvcynjf6l/s-grh82ifjhh-1mdyoqz-adqx47yh4q5fgcp31n42ylz5h/rb65hnlfv11uj21.o",
     "blog-scan/target/debug/incremental/blog_scan-t3khvcynjf6l/s-grh82ifjhh-1mdyoqz-adqx47yh4q5fgcp31n42ylz5h/query-cache.bin",
-    "blog-scan/target/debug/incremental/blog_scan-t3khvcynjf6l/s-grh82ifjhh-1mdyoqz-adqx47yh4q5fgcp31n42ylz5h/qirlppk6ezla5jc.o",
     "post/Untitled Diagram.svg",
     "post/Transition-System.svg",
     "post/is-hbase.md",
