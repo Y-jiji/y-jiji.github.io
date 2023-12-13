@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="post.css">
     <script src="js-yaml.js"></script>
     <script src="yamlFront.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js"></script>
     <script type="text/x-mathjax-config">
         window.MathJax = {
@@ -118,7 +119,6 @@
             // chaining mathjax rendering
             let body = document.getElementsByTagName("body")[0];
             let script = document.createElement("script");
-            script.setAttribute("type", "text/javascript");
             script.setAttribute("id", "MathJax-script");
             script.setAttribute("src", "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js");
             body.appendChild(script);
