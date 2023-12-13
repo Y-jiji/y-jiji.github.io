@@ -6,12 +6,9 @@
     <script src="js-yaml.js"></script>
     <script src="yamlFront.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/markdown-it-mathjax@2.0.0/markdown-it-mathjax.min.js"></script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
-          extensions: ["tex2jax.js"],
-          jax: ["input/TeX", "output/HTML-CSS"],
-          tex2jax: {
+          tex: {
             inlineMath: [ ['$','$'] ],
             displayMath: [ ['$$','$$'] ],
           },
@@ -124,7 +121,8 @@
             let body = document.getElementsByTagName("body")[0];
             let script = document.createElement("script");
             script.setAttribute("type", "text/javascript");
-            script.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/latest.min.js");
+            script.setAttribute("id", "MathJax-script");
+            script.setAttribute("src", "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js");
             body.appendChild(script);
         })
         .then(_any => {
