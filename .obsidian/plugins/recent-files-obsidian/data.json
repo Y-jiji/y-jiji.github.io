@@ -5,6 +5,10 @@
       "path": "post/comparator-automata.md"
     },
     {
+      "basename": "forward-forward",
+      "path": "post/forward-forward.md"
+    },
+    {
       "basename": "Untitled Diagram",
       "path": "post/Untitled Diagram.svg"
     },
@@ -35,10 +39,6 @@
     {
       "basename": "rpc-server",
       "path": "post/rpc-server.md"
-    },
-    {
-      "basename": "forward-forward",
-      "path": "post/forward-forward.md"
     },
     {
       "basename": "blog-from-scratch",
